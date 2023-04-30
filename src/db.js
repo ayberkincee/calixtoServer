@@ -10,8 +10,8 @@ const DB_PORT = 5432;
 //database conection:
 const sequelize = new Sequelize(
   //   // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/Calixtotest`,
-  `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/Calixto`,
-  // DB_DEPLOY,
+  // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/Calixto`,
+  DB_DEPLOY,
   {
     logging: false, // set to console.log to see the raw SQL queries
     native: false, // lets Sequelize know we can use pg-native for ~30% more speed
