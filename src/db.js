@@ -46,19 +46,25 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // Relaciones de entidades
 
-const {Product, Provider, Tax, Brand, Category } = sequelize.models;
+const {Product, Provider, Tax, Category, Class, Owner, State } = sequelize.models;
 
 Product.belongsToMany(Provider, { through: "ProdProve" });
 Provider.belongsToMany(Product, { through: "ProdProve" });
 
+Product.belongsToMany(Class, {through: "ProdClass"});
+Class.belongsToMany(Product, {through: "ProdClass"});
+
 Product.belongsTo(Tax);
 Tax.hasMany(Product);
 
-Product.belongsTo(Brand);
-Brand.hasMany(Product);
+Product.belongsTo(State);
+State.hasMany(Product);
 
 Product.belongsTo(Category);
 Category.hasMany(Product);
+
+Product.belongsTo(Owner);
+Owner.hasMany(Product);
 
 //Creates the intermediate table with the specified table name:
 

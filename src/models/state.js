@@ -1,7 +1,7 @@
-const {DataTypes} = require('sequelize');
+const { DataTypes } = require("sequelize");
 
-const providermodel = (sequelize) => {
-  sequelize.define("provider", {
+const statemodel = (sequelize) => {
+  sequelize.define("state", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -15,4 +15,4 @@ const providermodel = (sequelize) => {
   { timestamps: false }
   );
 };
-module.exports = providermodel;
+module.exports = statemodel;

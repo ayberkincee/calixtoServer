@@ -7,10 +7,12 @@ const taxmodel = (sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    iva: {
+    tax: {
       type: DataTypes.INTEGER,
       allowNull: false,
     },
-  });
+  },
+  { timestamps: false }
+  );
 };
 module.exports = taxmodel;

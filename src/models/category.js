@@ -11,7 +11,9 @@ const categorymodel = (sequelize) => {
             type: DataTypes.STRING,
             allowNull: false,
         },
-    })
+    },
+    { timestamps: false }
+    )
 
 }
 module.exports = categorymodel;
