@@ -3,7 +3,6 @@ const getProducts = require("../controllers/getProducts");
 const postProduct = require("../controllers/postProduct");
 const getAllUsers = require("../controllers/getAllUsers");
 const getOneUser = require("../controllers/getOneUser");
-const getProviders = require("../controllers/getProviders");
 
 const router = Router();
 

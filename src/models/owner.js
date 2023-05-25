@@ -21,6 +21,10 @@ const ownermodel = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      logoowner: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      }
     },
     { timestamps: false }
   );
