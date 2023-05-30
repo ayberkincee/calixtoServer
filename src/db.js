@@ -46,13 +46,25 @@ sequelize.models = Object.fromEntries(capsEntries);
 
 // Relaciones de entidades
 
-const {Product, Provider, Tax, Category, Class, Owner, State } = sequelize.models;
+const {
+  Product, Provider, Tax, Category, 
+  Icon, Owner, State, Portfolio, User 
+} = sequelize.models;
 
 Product.belongsToMany(Provider, { through: "ProdProve" });
 Provider.belongsToMany(Product, { through: "ProdProve" });
 
-Product.belongsToMany(Class, {through: "ProdClass"});
-Class.belongsToMany(Product, {through: "ProdClass"});
+Product.belongsToMany(Icon, {through: "ProdIcon"});
+Icon.belongsToMany(Product, {through: "ProdIcon"});
+
+Product.belongsToMany(Portfolio, {through: "ProdPort"});
+Portfolio.belongsToMany(Product, {through: "ProdPort"});
+
+User.belongsToMany(Portfolio, {through:"UserPort"});
+Portfolio.belongsToMany(User, {through:"UserPort"});
+
+Product.belongsToMany(Category, {through: "ProdCat"});
+Category.belongsToMany(Product, {through: "ProdCat"});
 
 Product.belongsTo(Tax);
 Tax.hasMany(Product);
@@ -60,13 +72,11 @@ Tax.hasMany(Product);
 Product.belongsTo(State);
 State.hasMany(Product);
 
-Product.belongsTo(Category);
-Category.hasMany(Product);
-
 Product.belongsTo(Owner);
 Owner.hasMany(Product);
 
-//Creates the intermediate table with the specified table name:
+User.belongsTo(Owner);
+Owner.hasMany(User);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

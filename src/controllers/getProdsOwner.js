@@ -1,6 +1,6 @@
-const { Product, Provider, Tax, Category, Owner, State, Class } = require("../db.js");
+const { Product, Provider, Tax, Category, Owner, State, Icon } = require("../db.js");
 
-const getProducts = async (req, res) => {
+const getProdsOwner = async (req, res) => {
   try{
   const {owner} = req.params;
 
@@ -33,7 +33,7 @@ const getProducts = async (req, res) => {
         },
       },
       {
-        model: Class,
+        model: Icon,
         attributes: ["iconUrl"],
         through: {
           attributes: [],
@@ -48,4 +48,4 @@ catch (error) {
 }
 
 }
-module.exports = getProducts;
+module.exports = getProdsOwner;

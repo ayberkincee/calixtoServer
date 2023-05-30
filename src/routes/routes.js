@@ -1,17 +1,21 @@
 const { Router } = require("express");
-const getProducts = require("../controllers/getProducts");
+const getProdsOwner = require("../controllers/getProdsOwner");
+const getProdsUser = require("../controllers/getProdsUser");
 const postProduct = require("../controllers/postProduct");
-const getAllUsers = require("../controllers/getAllUsers");
-const getOneUser = require("../controllers/getOneUser");
+const getAllOwners = require("../controllers/getAllOwners");
+const getOneOwner = require("../controllers/getOneOwner");
+const loadDb = require("../controllers/loadDb");
 
 const router = Router();
 
 //----------------------USER ROUTES-------------------------
-router.get("/users", getAllUsers);
-router.get("/user/:id", getOneUser);
+router.get("/owners", getAllOwners);
+router.get("/owner/:id", getOneOwner);
+router.post("/load", loadDb);
 
 //---------------------PRODUCT ROUTES---------------------
-router.get("/product/:owner", getProducts);
+router.get("/prodsowner/:owner", getProdsOwner);
+router.get("/prodsuser/:user", getProdsUser);
 router.post("/product", postProduct);
 
 module.exports = router;
