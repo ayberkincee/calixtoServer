@@ -37,22 +37,19 @@ const loadDb = async (req, res) => {
     await Portfolio.bulkCreate(portfolio);
     const products = await Product.bulkCreate(product);
 
-    // await newProd.setOwner(ownerId); //OneToMany
-    // await newProd.addProvider(providerId); //ManyToMany
-
-    products.map(async (p) => {
-      await p.addCategory(100101);
+    products.map(async (p,i) => {
+      await p.addCategory(100101+Math.floor(i*0.4));
       await p.addIcon(2);
       await p.addIcon(3);
-      await p.addPortfolio(4);
-      await p.addProvider(4);
+      await p.addPortfolio(1+Math.floor(i*0.4));
+      await p.addProvider(1+Math.floor(i*0.4));
       await p.setState(1);
       await p.setTax(4);
-      await p.setOwner(2)
+      await p.setOwner(1+Math.floor(i*0.4))
     });
-    users.map(async (u) => {
-        await u.setOwner(2);
-        await u.addPortfolio(4)
+    users.map(async (u,i) => {
+        await u.setOwner(1+Math.floor(i*0.4));
+        await u.addPortfolio(1+Math.floor(i*0.4))
     });
     res.status(200).send("cargue de DB OK");
   } catch (err) {
