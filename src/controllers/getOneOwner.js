@@ -1,3 +1,4 @@
+//returns an owner object
 const { Owner } = require("../db.js");
 
 const getOneOwner = async (req, res) => {

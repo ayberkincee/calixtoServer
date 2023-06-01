@@ -1,63 +1,40 @@
-const { Product, Provider, Tax, Category, Owner, State, Icon } = require("../db.js");
+//returns an array of product objects
+const { Product, Provider, Portfolio, User } = require("../db.js");
 
 const getProdsUser = async (req, res) => {
-  try{
-  const {userId} = req.params;
+  try {
+    const { userId } = req.params;
 
-  //Encontrar los potafolios del usuario:
-  let UsrPort = await User.findAll({
-    where: {
-      id: userId
-    },
-    include:[{
-      model: User,
-      attibutes: []
-    }]
-  })
+    //Encontrar los potafolios del usuario:
+    let usrPort = await User.findAll({
+      where: { id: userId },
+      include: [Portfolio],
+    });
+    usrPort = usrPort[0].portfolios.map((p) => p.id);
 
-//Encontrar los productos de esos portafolios:
-  let allProducts = await Product.findAll({
-    where: {
-      userId: userId
-    },
-    include: [
-      {
-        model: User,
-        attributes: ["name"],
-      },
-      {
-        model: Tax,
-        attributes: ["tax"],
-      },
-      {
-        model: Category,
-        attributes: ["name"],
-      },
-      {
-        model: State,
-        attributes: ["id"]
-      },
-      {
-        model: Provider,
-        attributes: ["name"],
-        through: {
-          attributes: [],
-        },
-      },
-      {
-        model: Icon,
-        attributes: ["iconUrl"],
-        through: {
-          attributes: [],
-        },
-      },
-    ],
-  });
-  res.status(200).json(allProducts);
-}
-catch (error) {
-  res.status(400).json({error: "error al cargar los productos"})
-}
+    let prodUser = [];
+    //Encontrar los productos de esos portafolios:
+    for (let i = 0; i < usrPort.length; i++) {
+      prodUser = await Portfolio.findAll({
+        where: { id: usrPort[i] },
+        include: [Product]
+      });
+    }
+    prodUser = prodUser[0].products;
+    //array of product objects
 
-}
+    let prove = [];
+    for (let i = 0; i < prodUser.length; i++) {
+      prove = await Product.findAll({
+        where: { codigo: prodUser[i].codigo },
+        include: [Provider],
+      });
+    }
+    prove = prove[0].providers;
+
+    res.status(200).json({ prodUser, prove });
+  } catch (error) {
+    res.status(400).json({ error: error.message });
+  }
+};
 module.exports = getProdsUser;

@@ -3,19 +3,33 @@ const getProdsOwner = require("../controllers/getProdsOwner");
 const getProdsUser = require("../controllers/getProdsUser");
 const postProduct = require("../controllers/postProduct");
 const getAllOwners = require("../controllers/getAllOwners");
+const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
+const getOneUser = require("../controllers/getOneUser");
 const loadDb = require("../controllers/loadDb");
+
 
 const router = Router();
 
 //----------------------USER ROUTES-------------------------
 router.get("/owners", getAllOwners);
+//returns an array of owners objects
+router.get("/users/:ownerId", getAllUsers);
+//returns an array of users objects
 router.get("/owner/:id", getOneOwner);
-router.post("/load", loadDb);
+//returns an owner object
+router.get("/user/:id", getOneUser);
+//returns an user object
 
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);
-router.get("/prodsuser/:user", getProdsUser);
+//returns an array of product objects
+router.get("/prodsuser/:userId", getProdsUser);
+//returns an array of product objects
+
 router.post("/product", postProduct);
+
+//-------------------------PROVISIONAL------------------------
+router.post("/load", loadDb);
 
 module.exports = router;

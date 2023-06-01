@@ -15,8 +15,9 @@ const postProduct = async (req, res) => {
     const stateId = prod.stateId;
     const categoryId = prod.categoryId;
     const ownerId = prod.ownerId;
-    const classId = prod.classId;
+    const iconId = prod.iconId;
     const providerId = prod.providerId;
+    const portfolioId = prod.portfolioId;
 
     prod = {
       codigo: prod.codigo,
@@ -32,10 +33,11 @@ const postProduct = async (req, res) => {
 
     await newProd.setTax(taxId); //OneToMany
     await newProd.setState(stateId); //OneToMany
-    await newProd.setCategory(categoryId); //OneToMany
     await newProd.setOwner(ownerId); //OneToMany
+    await newProd.addCategory(categoryId); //OneToMany
     await newProd.addProvider(providerId); //ManyToMany
-    await newProd.addClass(classId); //ManyToMany
+    await newProd.addIcon(iconId); //ManyToMany
+    await newProd.addPortfolio(portfolioId); //ManyToMany
 
     res.status(200).json(newProd);
   } catch (error) {

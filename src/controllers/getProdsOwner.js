@@ -1,3 +1,4 @@
+//returns an array of product objects
 const { Product, Provider, Tax, Category, Owner, State, Icon } = require("../db.js");
 
 const getProdsOwner = async (req, res) => {
