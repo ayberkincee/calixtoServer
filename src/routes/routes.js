@@ -7,11 +7,14 @@ const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
 const loadDb = require("../controllers/loadDb");
+const getSession = require("../controllers/getSession");
 
 
 const router = Router();
 
 //----------------------USER ROUTES-------------------------
+router.post("/session", getSession)
+
 router.get("/owners", getAllOwners);
 //returns an array of owners objects
 router.get("/users/:ownerId", getAllUsers);
