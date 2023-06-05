@@ -1,4 +1,4 @@
-console.log('running db.js');
+console.log("running db.js");
 
 require("dotenv").config();
 const { Sequelize } = require("sequelize");
@@ -30,9 +30,9 @@ fs.readdirSync(path.join(__dirname, "/models"))
   .forEach((file) => {
     modelDefiners.push(require(path.join(__dirname, "/models", file)));
   });
-  
-  console.log("modelDefiners");
-  console.log(modelDefiners);
+
+console.log("modelDefiners");
+console.log(modelDefiners);
 
 // Injectamos la conexion (sequelize) a todos los modelos: crea la instancia de cada modelo y lo incluye en sequelize.models
 modelDefiners.forEach((model) => model(sequelize));
@@ -47,24 +47,34 @@ sequelize.models = Object.fromEntries(capsEntries);
 // Relaciones de entidades
 
 const {
-  Product, Provider, Tax, Category, 
-  Icon, Owner, State, Portfolio, User 
+  Product,
+  Provider,
+  Tax,
+  Category,
+  Icon,
+  Owner,
+  State,
+  Portfolio,
+  User,
 } = sequelize.models;
 
-Product.belongsToMany(Provider, { through: "ProdProve" });
-Provider.belongsToMany(Product, { through: "ProdProve" });
+// Product.belongsToMany(Provider, { through: "ProdProve" });
+// Provider.belongsToMany(Product, { through: "ProdProve" });
 
-Product.belongsToMany(Icon, {through: "ProdIcon"});
-Icon.belongsToMany(Product, {through: "ProdIcon"});
+Product.belongsToMany(Icon, { through: "ProdIcon" });
+Icon.belongsToMany(Product, { through: "ProdIcon" });
 
-Product.belongsToMany(Portfolio, {through: "ProdPort"});
-Portfolio.belongsToMany(Product, {through: "ProdPort"});
+Product.belongsToMany(Portfolio, { through: "ProdPort" });
+Portfolio.belongsToMany(Product, { through: "ProdPort" });
 
-User.belongsToMany(Portfolio, {through:"UserPort"});
-Portfolio.belongsToMany(User, {through:"UserPort"});
+User.belongsToMany(Portfolio, { through: "UserPort" });
+Portfolio.belongsToMany(User, { through: "UserPort" });
 
-Product.belongsToMany(Category, {through: "ProdCat"});
-Category.belongsToMany(Product, {through: "ProdCat"});
+Product.belongsTo(Provider);
+Provider.hasMany(Product);
+
+Product.belongsTo(Category);
+Category.hasMany(Product);
 
 Product.belongsTo(Tax);
 Tax.hasMany(Product);

@@ -8,7 +8,7 @@ const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
 const loadDb = require("../controllers/loadDb");
 const getSession = require("../controllers/getSession");
-
+const bulkLoadDb = require("../controllers/bulkLoadDb");
 
 const router = Router();
 
@@ -31,6 +31,7 @@ router.get("/prodsuser/:userId", getProdsUser);
 //returns an array of product objects
 
 router.post("/product", postProduct);
+router.post("/bulkcreate", bulkLoadDb)
 
 //-------------------------PROVISIONAL------------------------
 router.post("/load", loadDb);

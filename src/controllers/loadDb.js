@@ -25,8 +25,6 @@ const loadDb = async (req, res) => {
       portfolio,
       product,
     } = req.body;
-    // console.log('icon');
-    // console.log(icon);
     await Category.bulkCreate(category);
     await Tax.bulkCreate(tax);
     await Icon.bulkCreate(icon);
@@ -38,7 +36,7 @@ const loadDb = async (req, res) => {
     const products = await Product.bulkCreate(product);
 
     products.map(async (p,i) => {
-      await p.addCategory(100101+Math.floor(i*0.4));
+      await p.setCategory(100101+Math.floor(i*0.4));
       await p.addIcon(2);
       await p.addIcon(3);
       await p.addPortfolio(1+Math.floor(i*0.4));

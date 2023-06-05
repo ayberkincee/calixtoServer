@@ -29,9 +29,6 @@ const getProdsOwner = async (req, res) => {
       {
         model: Provider,
         attributes: ["name"],
-        through: {
-          attributes: [],
-        },
       },
       {
         model: Icon,

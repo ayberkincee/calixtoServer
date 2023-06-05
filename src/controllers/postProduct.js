@@ -34,8 +34,8 @@ const postProduct = async (req, res) => {
     await newProd.setTax(taxId); //OneToMany
     await newProd.setState(stateId); //OneToMany
     await newProd.setOwner(ownerId); //OneToMany
-    await newProd.addCategory(categoryId); //OneToMany
-    await newProd.addProvider(providerId); //ManyToMany
+    await newProd.setCategory(categoryId); //OneToMany
+    await newProd.setProvider(providerId); //ManyToMany
     await newProd.addIcon(iconId); //ManyToMany
     await newProd.addPortfolio(portfolioId); //ManyToMany
 

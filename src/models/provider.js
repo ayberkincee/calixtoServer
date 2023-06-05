@@ -3,9 +3,9 @@ const {DataTypes} = require('sequelize');
 const providermodel = (sequelize) => {
   sequelize.define("provider", {
     id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.UUID,
+      defaultValue: DataTypes.UUIDV4,
       primaryKey: true,
-      autoIncrement: false,
     },
     name: {
       type: DataTypes.STRING,
