@@ -70,6 +70,9 @@ Portfolio.belongsToMany(Product, { through: "ProdPort" });
 User.belongsToMany(Portfolio, { through: "UserPort" });
 Portfolio.belongsToMany(User, { through: "UserPort" });
 
+State.belongsToMany(Owner, { through: "OwnerState" });
+Owner.belongsToMany(State, { through: "OwnerState" });
+
 Product.belongsTo(Provider);
 Provider.hasMany(Product);
 

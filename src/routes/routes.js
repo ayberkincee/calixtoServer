@@ -9,6 +9,7 @@ const getOneUser = require("../controllers/getOneUser");
 const loadDb = require("../controllers/loadDb");
 const getSession = require("../controllers/getSession");
 const bulkLoadDb = require("../controllers/bulkLoadDb");
+const postState = require("../controllers/postState");
 
 const router = Router();
 
@@ -35,5 +36,7 @@ router.post("/bulkcreate", bulkLoadDb)
 
 //-------------------------PROVISIONAL------------------------
 router.post("/load", loadDb);
+
+router.post("/state/:id", postState)
 
 module.exports = router;

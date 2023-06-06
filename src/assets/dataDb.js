@@ -23,10 +23,10 @@ const dataDb = {
     ],
   
     state: [
-      { id: 1, name: "disponible" },
-      { id: 2, name: "llegado" },
-      { id: 3, name: "agotado" },
-      { id: 4, name: "escaso" },
+      {name: "disponible" },
+      {name: "llegado" },
+      {name: "agotado" },
+      {name: "escaso" },
     ],
   
     icon: [
