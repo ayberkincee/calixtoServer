@@ -7,7 +7,8 @@ const getProdsOwner = async (req, res) => {
 
   let allProducts = await Product.findAll({
     where: {
-      ownerId: owner
+      ownerId: owner,
+      isActive: true
     },
     include: [
       {

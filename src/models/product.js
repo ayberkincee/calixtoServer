@@ -9,6 +9,10 @@ const productmodel = (sequelize) => {
         primaryKey: true,
         autoIncrement: false,
       },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
+      },
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,

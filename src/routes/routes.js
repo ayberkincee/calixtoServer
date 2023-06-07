@@ -11,6 +11,7 @@ const getSession = require("../controllers/getSession");
 const bulkLoadDb = require("../controllers/bulkLoadDb");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
+const deleteProduct = require("../controllers/deleteProduct");
 
 const router = Router();
 
@@ -37,6 +38,8 @@ router.post("/product", postProduct);
 router.post("/bulkcreate", bulkLoadDb);
 
 router.patch("/product/:id", patchProduct);
+
+router.delete("/product/:id", deleteProduct);
 
 //-------------------------PROVISIONAL------------------------
 router.post("/load", loadDb);
