@@ -9,7 +9,9 @@ const {
   User,
   Portfolio,
 } = require("../db.js");
+
 const { dataDb } = require("../assets/dataDb.js");
+
 const owner = {
   id: 1,
   name: "SF Group",
@@ -20,11 +22,13 @@ const owner = {
   sloganOwner: "Distribuyendo feicidad",
   cardType: 2,
 };
+
 const user = {
   id: 1,
   name: "Juanfer",
   password: "qwer",
 };
+
 const portfolio = [
   {
     id: 1,
@@ -40,6 +44,7 @@ const portfolio = [
   },
 ];
 
+//------------------------------------------------------------
 async function bulkLoadDb(req, res) {
   try {
     await Tax.bulkCreate(dataDb.tax);
@@ -101,12 +106,12 @@ async function bulkLoadDb(req, res) {
         await product.setProvider(provider);
         // await product.setCategory(categoryId);
         await product.setOwner(prd[i].ownerId);
-        prd[i].keto = "SI" ? product.addIcon(1) : null;
-        prd[i].vegano = "SI" ? product.addIcon(2) : null;
-        prd[i].vegetariano = "SI" ? product.addIcon(3) : null;
-        prd[i].diabetico = "SI" ? product.addIcon(4) : null;
-        prd[i].proteina = "SI" ? product.addIcon(5) : null;
-        prd[i].gluten = "SI" ? product.addIcon(6) : null;
+        prd[i].keto = "SI" ? product.addIcon(1) : product.addIcon(7);
+        prd[i].vegano = "SI" ? product.addIcon(2) : product.addIcon(8);
+        prd[i].vegetariano = "SI" ? product.addIcon(3) : product.addIcon(9);
+        prd[i].diabetico = "SI" ? product.addIcon(4) : nulproduct.addIcon(10);
+        prd[i].proteina = "SI" ? product.addIcon(5) : product.addIcon(11);
+        prd[i].gluten = "SI" ? product.addIcon(6) : product.addIcon(12);
         const portfolios = prd[i].portfolios.split("|");
         portfolios.map((p) => {
           product.addPortfolio(p);
