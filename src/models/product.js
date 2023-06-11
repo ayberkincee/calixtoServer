@@ -37,6 +37,10 @@ const productmodel = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
+      prioridad: {
+        type: DataTypes.INTEGER,
+        defaultValue: 10
+      }
     },
     { timestamps: false }
   );
