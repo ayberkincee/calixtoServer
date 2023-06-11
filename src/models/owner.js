@@ -21,6 +21,18 @@ const ownermodel = (sequelize) => {
         type: DataTypes.INTEGER,
         allowNull: false,
       },
+      logoOwner: {
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      sloganOwner:{
+        type: DataTypes.TEXT,
+        allowNull: true
+      },
+      cardType: {
+        type: DataTypes.INTEGER,
+        allowNull: false
+      }
     },
     { timestamps: false }
   );

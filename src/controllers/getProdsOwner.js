@@ -1,7 +1,15 @@
-const { Product, Provider, Tax, Category, Owner, State, Class } = require("../db.js");
+//returns an array of product objects
+const { Product, Provider, Tax, Category, Owner, State, Icon } = require("../db.js");
 
-const getProducts = async (req, res) => {
+const getProdsOwner = async (req, res) => {
+  try{
+  const {owner} = req.params;
+
   let allProducts = await Product.findAll({
+    where: {
+      ownerId: owner,
+      isActive: true
+    },
     include: [
       {
         model: Owner,
@@ -22,12 +30,9 @@ const getProducts = async (req, res) => {
       {
         model: Provider,
         attributes: ["name"],
-        through: {
-          attributes: [],
-        },
       },
       {
-        model: Class,
+        model: Icon,
         attributes: ["iconUrl"],
         through: {
           attributes: [],
@@ -35,7 +40,11 @@ const getProducts = async (req, res) => {
       },
     ],
   });
-
   res.status(200).json(allProducts);
-};
-module.exports = getProducts;
+}
+catch (error) {
+  res.status(400).json({error: "error al cargar los productos"})
+}
+
+}
+module.exports = getProdsOwner;

@@ -1,7 +1,7 @@
 const { DataTypes } = require("sequelize");
 
-const brandmodel = (sequelize) => {
-  sequelize.define("brand", {
+const iconmodel = (sequelize) => {
+  sequelize.define("icon", {
     id: {
       type: DataTypes.INTEGER,
       primaryKey: true,
@@ -11,7 +11,7 @@ const brandmodel = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: false,
     },
-    logoUrl: {
+    iconUrl: {
       type: DataTypes.STRING,
       allowNull: false,
     },
@@ -19,4 +19,4 @@ const brandmodel = (sequelize) => {
   { timestamps: false }
   );
 };
-module.exports = brandmodel;
+module.exports = iconmodel;

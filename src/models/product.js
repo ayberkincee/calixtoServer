@@ -9,6 +9,10 @@ const productmodel = (sequelize) => {
         primaryKey: true,
         autoIncrement: false,
       },
+      isActive: {
+        type: DataTypes.BOOLEAN,
+        defaultValue: true
+      },
       nombre: {
         type: DataTypes.STRING,
         allowNull: false,
@@ -33,8 +37,8 @@ const productmodel = (sequelize) => {
         type: DataTypes.TEXT,
         allowNull: false,
       },
-    }
-    // { timestamps: false }
+    },
+    { timestamps: false }
   );
 };
 module.exports = productmodel;
