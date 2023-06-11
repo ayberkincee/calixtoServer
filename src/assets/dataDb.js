@@ -1,4 +1,5 @@
-const dataDb = {
+const dataDb = 
+{
     category: [
       {
         id: 100101,
@@ -70,37 +71,37 @@ const dataDb = {
         id: 7,
         name: "Xketo",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Keto_bjwxe9.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoKeto_hlneqz.jpg",
       },
       {
         id: 8,
         name: "Xvegano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Vegan_niu9ta.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/NoVegan_w55mxp.jpg",
       },
       {
         id: 9,
         name: "Xvegetariano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Vegetarian_eys2s4.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730192/calixto/NoVegetarian_cbwq6b.jpg",
       },
       {
         id: 10,
         name: "XaptoDiabetico",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Diabetic_ifjsmh.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoDiabetic_m1usq2.jpg",
       },
       {
         id: 11,
         name: "XaltoProteina",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Protein_bdxjjk.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoProtein_gi6vs0.jpg",
       },
       {
         id: 12,
         name: "XsinGluten",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Gluten_ubwtpz.jpg",
+          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoGluten_abuhjs.jpg",
       },
     ],
   
@@ -179,7 +180,7 @@ const dataDb = {
     ],
   
     portfolio: [
-      { id: 1, name: "Bebidas" },
+      { id: 1, name: "Todos" },
       { id: 2, name: "Aseo" },
       { id: 3, name: "Repuestos" },
       { id: 4, name: "Dulces" },
