@@ -3,7 +3,6 @@ const express = require("express");
 const bodyParser = require("body-parser");
 const morgan = require("morgan");
 const routes = require("./routes/routes.js");
-const cors = require("cors");
 
 require("./db.js");
 
@@ -11,18 +10,14 @@ const server = express();
 server.name = "server";
 
 //==============MIDDLEWARES=========================
-server.use(cors());
-// server.use(function(req, res, next) {
-//   res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
-//      next();
-// });
+
 server.use(bodyParser.urlencoded({ extended: true, limit: "50mb" }));
 server.use(bodyParser.json({ limit: "50mb" }));
 server.use(express.json());
 //server.use(cookieParser());
 server.use(morgan("dev"));
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "https://calixtoclient-m2.up.railway.app/"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Request-Method", "*"); 
   res.header(
