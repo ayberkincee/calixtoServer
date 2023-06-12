@@ -11,7 +11,7 @@ const server = express();
 server.name = "server";
 
 //==============MIDDLEWARES=========================
-//server.use(cors());
+server.use(cors());
 // server.use(function(req, res, next) {
 //   res.header('Access-Control-Allow-Methods', 'POST, GET, PUT, DELETE, OPTIONS');
 //      next();
@@ -22,7 +22,7 @@ server.use(express.json());
 //server.use(cookieParser());
 server.use(morgan("dev"));
 server.use((req, res, next) => {
-  res.header("Access-Control-Allow-Origin", "*"); // update to match the domain you will make the request from
+  res.header("Access-Control-Allow-Origin", "https://calixtoclient-m2.up.railway.app/"); // update to match the domain you will make the request from
   res.header("Access-Control-Allow-Credentials", "true");
   res.header("Access-Control-Request-Method", "*"); 
   res.header(
@@ -38,7 +38,7 @@ server.use((err, req, res, next) => {
   // eslint-disable-line no-unused-vars
   const status = err.status || 500;
   const message = err.message || err;
-  console.error('app err');
+  console.error('Algo salio mal!');
   console.error(err);
   res.status(status).send(message);
 });
