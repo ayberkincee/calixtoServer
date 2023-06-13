@@ -50,9 +50,9 @@ async function bulkLoadDb(req, res) {
         const provider = await Provider.findOne({
           where: { name: prd[i].provider },
         });
-        // console.log("provider");
-        // console.log(provider.id);
-        const categoryId = await Category.findOrCreate({
+        
+        const categoryId = prd[i].categoryId;
+        await Category.findOrCreate({
           where: { name: prd[i].category },
           defaults: {
             id: prd[i].categoryId,
@@ -78,7 +78,7 @@ async function bulkLoadDb(req, res) {
         await product.setTax(tax);
         await product.setState(prd[i].stateId);
         await product.setProvider(provider);
-        // await product.setCategory(categoryId);
+        await product.setCategory(categoryId);
 
         await product.setOwner(prd[i].ownerId);
         prd[i].keto === "SI" ? product.addIcon(1) : product.addIcon(7);
