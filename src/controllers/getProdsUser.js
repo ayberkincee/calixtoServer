@@ -63,7 +63,7 @@ const getProdsUser = async (req, res) => {
         },
         {
           model: Icon,
-          attributes: ["id","name","iconUrl"],
+          attributes: ["id", "iconUrl"],
           through: {
             attributes: [],
           },
@@ -84,8 +84,9 @@ const getProdsUser = async (req, res) => {
     });
     // console.log("produser RRR");
     // console.log(prodUser[0].icons);
+
     let prove = prodUser.map((p) => p.provider.name);
-    let categ = prodUser.map(p=>p.category.name)
+    let categ = prodUser.map((p) => p.category.name);
     //prove is an array with prividers names
     // console.log("prove s");
     // console.log(prove);
