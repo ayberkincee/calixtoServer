@@ -63,7 +63,7 @@ const getProdsUser = async (req, res) => {
         },
         {
           model: Icon,
-          attributes: ["iconUrl"],
+          attributes: ["id", "iconUrl"],
           through: {
             attributes: [],
           },
@@ -84,16 +84,19 @@ const getProdsUser = async (req, res) => {
     });
     // console.log("produser RRR");
     // console.log(prodUser[0].icons);
-    prove = prodUser.map((p) => p.provider.name);
+
+    let prove = prodUser.map((p) => p.provider.name);
+    let categ = prodUser.map((p) => p.category.name);
     //prove is an array with prividers names
     // console.log("prove s");
     // console.log(prove);
     //pu = [];
     //prove.map((p) => p.map((q) => pu.push(q)));
     prove = Array.from(new Set(prove));
+    categ = Array.from(new Set(categ));
     // console.log("prove t");
     // console.log(prove);
-    res.status(200).json({ prodUser, prove });
+    res.status(200).json({ prodUser, prove, categ });
   } catch (error) {
     res.status(400).json({ error: error.message });
   }
