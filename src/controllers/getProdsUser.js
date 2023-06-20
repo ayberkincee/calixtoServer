@@ -86,7 +86,7 @@ const getProdsUser = async (req, res) => {
     // console.log(prodUser[0].icons);
 
     let prove = prodUser.map((p) => p.provider.name);
-    let categ = prodUser.map((p) => p.category.name);
+    let categ = prodUser.map((p) => p.category?.name);
     //prove is an array with prividers names
     // console.log("prove s");
     // console.log(prove);
