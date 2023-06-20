@@ -1,3 +1,4 @@
+//imports the models
 const {
   Product,
   Provider,
@@ -10,9 +11,12 @@ const {
   Portfolio,
 } = require("../db.js");
 
+//gets the local data needed to populate the database
+//local data should be loaded only when the database is empty! 
 const { dataDb } = require("../assets/dataDb.js");
 
 //------------------------------------------------------------
+//receives the data sent after Papa parsed it
 async function bulkLoadDb(req, res) {
   // try {
     await Tax.bulkCreate(dataDb.tax);
@@ -60,6 +64,10 @@ async function bulkLoadDb(req, res) {
           },
         });
 
+        const categ = await Category.findOne({
+          where: {id: prd[i].categoryId}
+        })
+
         // console.log("sacando stateId...");
         const stateId = prd[i].state;
 
@@ -72,13 +80,15 @@ async function bulkLoadDb(req, res) {
           precioBase: prd[i].precioBase,
           prodUrl: prd[i].prodUrl,
           descripcion: prd[i].descripcion,
-          prioridad: prd[i].prioridad
+          // prioridad: prd[i].prioridad
         });
 
         await product.setTax(tax);
         await product.setState(prd[i].stateId);
         await product.setProvider(provider);
-        // await product.setCategory(categoryId);
+        // console.log("cid");
+        // console.log(categoryId.id);
+        await product.setCategory(categ);
 
         await product.setOwner(prd[i].ownerId);
         prd[i].keto === "SI" ? product.addIcon(1) : product.addIcon(7);

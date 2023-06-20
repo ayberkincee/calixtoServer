@@ -7,6 +7,7 @@ const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
 const loadDb = require("../controllers/loadDb");
+const updateProducts = require("../controllers/updateProducts");
 const getSession = require("../controllers/getSession");
 const bulkLoadDb = require("../controllers/bulkLoadDb");
 const postState = require("../controllers/postState");
@@ -17,7 +18,7 @@ const test = require("../controllers/test");
 const router = Router();
 
 //----------------------USER ROUTES-------------------------
-router.post("/session", getSession)
+router.post("/session", getSession);
 
 router.get("/owners", getAllOwners);
 //returns an array of owners objects
@@ -45,8 +46,10 @@ router.delete("/product/:id", deleteProduct);
 //-------------------------PROVISIONAL------------------------
 router.post("/load", loadDb);
 
-router.get('/test', test);
+router.patch("/updateProducts", updateProducts);
 
-router.post("/state/:id", postState)
+router.get("/test", test);
+
+router.post("/state/:id", postState);
 
 module.exports = router;
