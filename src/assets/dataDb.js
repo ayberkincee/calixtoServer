@@ -1,33 +1,11 @@
 const dataDb = 
 {
-    // category: [
-    //   {
-    //     id: 100101,
-    //     name: "SFGROUP/ALIMENTOS  /HARINAS_MEZCLAS/HARINAS",
-    //   },
-    //   {
-    //     id: 100102,
-    //     name: "SFGROUP/ALIMENTOS  /HARINAS_MEZCLAS/MEZCLAS",
-    //   },
-    //   {
-    //     id: 100103,
-    //     name: "SFGROUP/ALIMENTOS  /GRANOS_CEREALES_GRANOLAS/GRANOS",
-    //   },
-    //   {
-    //     id: 100104,
-    //     name: "SFGROUP/ALIMENTOS  /GRANOS_CEREALES_GRANOLAS/CEREALES",
-    //   },
-    //   {
-    //     id: 100105,
-    //     name: "SFGROUP/ALIMENTOS  /GRANOS_CEREALES_GRANOLAS/GRANOLAS",
-    //   },
-    // ],
   
     state: [
       {name: "disponible" },
       {name: "llegado" },
       {name: "agotado" },
-      {name: "escaso" },
+      {name: "limitado" },
     ],
   
     icon: [
@@ -112,14 +90,6 @@ const dataDb =
       { id: 4, tax: 16 },
       { id: 5, tax: 19 },
     ],
-  
-    // provider: [
-    //   { id: 1, name: "UP NUTRICIONAL FOOD SAS" },
-    //   { id: 2, name: "EL DORADO COMEX SAS" },
-    //   { id: 3, name: "ALIMENTOS EL DORADO SAS" },
-    //   { id: 4, name: "ECOHOME" },
-    //   { id: 5, name: "AMIRA SAS" },
-    // ],
   
     user: [
       { id: 1, name: "Mati", password: "qwer" },
