@@ -6,7 +6,6 @@ const getAllOwners = require("../controllers/getAllOwners");
 const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
-const loadDb = require("../controllers/loadDb");
 const updateProducts = require("../controllers/updateProducts");
 const getSession = require("../controllers/getSession");
 const bulkLoadDb = require("../controllers/bulkLoadDb");
@@ -44,7 +43,6 @@ router.patch("/product/:id", patchProduct);
 router.delete("/product/:id", deleteProduct);
 
 //-------------------------PROVISIONAL------------------------
-router.post("/load", loadDb);
 
 router.patch("/updateProducts", updateProducts);
 
