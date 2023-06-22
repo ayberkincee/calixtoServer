@@ -13,23 +13,23 @@ const {
 
 //gets the local data needed to populate the database
 //local data should be loaded only when the database is empty! 
-const { dataDb } = require("../assets/dataDb.js");
+// const { dataDb } = require("../assets/dataDb.js");
 
 //------------------------------------------------------------
 //receives the data sent after Papa parsed it
 async function bulkLoadDb(req, res) {
   // try {
-    await Tax.bulkCreate(dataDb.tax);
-    await State.bulkCreate(dataDb.state);
-    await Icon.bulkCreate(dataDb.icon);
-    await Owner.bulkCreate(dataDb.owner);
-    await Portfolio.bulkCreate(dataDb.portfolio);
-    const port = await Portfolio.findOne({ where: { id: 1 } });
-    await User.bulkCreate(dataDb.user);
-    const usr = await User.findOne({ where: { id: 1 } });
-    usr.setOwner(dataDb.owner[0].id);
-    // usr.addPortfolio(portfolio[0].id);
-    usr.addPortfolio(port.id);
+    // await Tax.bulkCreate(dataDb.tax);
+    // await State.bulkCreate(dataDb.state);
+    // await Icon.bulkCreate(dataDb.icon);
+    // await Owner.bulkCreate(dataDb.owner);
+    // await Portfolio.bulkCreate(dataDb.portfolio);
+    // const port = await Portfolio.findOne({ where: { id: 1 } });
+    // await User.bulkCreate(dataDb.user);
+    // const usr = await User.findOne({ where: { id: 1 } });
+    // usr.setOwner(dataDb.owner[0].id);
+    // // usr.addPortfolio(portfolio[0].id);
+    // usr.addPortfolio(port.id);
 
     prd = req.body;
     //req.body is an array of product objects like the CSV

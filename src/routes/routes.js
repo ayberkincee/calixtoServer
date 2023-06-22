@@ -13,6 +13,7 @@ const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
 const test = require("../controllers/test");
+const InitLoad = require("../controllers/initLoad");
 
 const router = Router();
 
@@ -49,5 +50,7 @@ router.patch("/updateProducts", updateProducts);
 router.get("/test", test);
 
 router.post("/state/:id", postState);
+
+router.get("/initLoad", InitLoad);
 
 module.exports = router;
