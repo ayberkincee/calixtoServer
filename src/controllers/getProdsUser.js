@@ -51,11 +51,11 @@ const getProdsUser = async (req, res) => {
     // console.log("produser q");
     // console.log(prodUser);
 
-    const prodUserId = prodUser.map((p) => p.codigo); //prodUserId is an array of id of products
+    const prodUserId = prodUser.map((p) => p.id); //prodUserId is an array of id of products
     // console.log("prodUserId");
     // console.log(prodUserId);
     prodUser = await Product.findAll({
-      where: { codigo: prodUserId },
+      where: { id: prodUserId },
       include: [
         {
           model: Provider,

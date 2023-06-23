@@ -5,7 +5,7 @@ async function updateProducts(req, res) {
 
   try {
     products.forEach(async (p) => {
-    const r = await Product.update(p, { where: { codigo: p.codigo } });
+    const r = await Product.update(p, { where: { id: p.id } });
     });
     res.status(200).send("cargue de DB OK");
   } catch (err) {

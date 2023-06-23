@@ -4,7 +4,7 @@ const productmodel = (sequelize) => {
   sequelize.define(
     "product",
     {
-      codigo: {
+      id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: false,

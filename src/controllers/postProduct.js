@@ -20,7 +20,7 @@ const postProduct = async (req, res) => {
     const portfolioId = prod.portfolioId;
 
     prod = {
-      codigo: prod.codigo,
+      codigo: prod.id,
       nombre: prod.nombre,
       codigoBarras: prod.codigoBarras,
       embalaje: prod.embalaje,

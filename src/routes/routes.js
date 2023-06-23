@@ -8,7 +8,7 @@ const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
 const updateProducts = require("../controllers/updateProducts");
 const getSession = require("../controllers/getSession");
-const bulkLoadDb = require("../controllers/bulkLoadDb");
+const bulkcreate = require("../controllers/bulkcreate");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
@@ -37,7 +37,7 @@ router.get("/prodsuser/:userId", getProdsUser);
 
 router.post("/product", postProduct);
 
-router.post("/bulkcreate", bulkLoadDb);
+router.post("/bulkcreate", bulkcreate);
 
 router.patch("/product/:id", patchProduct);
 

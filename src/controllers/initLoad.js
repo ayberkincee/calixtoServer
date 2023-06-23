@@ -23,12 +23,17 @@ async function InitLoad(req, res) {
     await Icon.bulkCreate(dataDb.icon);
     await Owner.bulkCreate(dataDb.owner);
     await Portfolio.bulkCreate(dataDb.portfolio);
-    const port = await Portfolio.findOne({ where: { id: 1 } });
+    const port1 = await Portfolio.findOne({ where: { id: 1 } });
+    const port2 = await Portfolio.findOne({ where: { id: 2 } });
     await User.bulkCreate(dataDb.user);
-    const usr = await User.findOne({ where: { id: 1 } });
+
+    let usr = await User.findOne({ where: { id: 1 } });
     usr.setOwner(dataDb.owner[0].id);
-    // usr.addPortfolio(portfolio[0].id);
-    usr.addPortfolio(port.id);
+    usr.addPortfolio(port1.id);
+
+    usr = await User.findOne({ where: { id: 2 } });
+    usr.setOwner(dataDb.owner[1].id);
+    usr.addPortfolio(port2.id);
 
     console.log("datos iniciales cargados! 👍🏻");
     res.status(200).send("carga OK");
