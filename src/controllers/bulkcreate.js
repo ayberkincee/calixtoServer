@@ -37,9 +37,9 @@ async function bulkcreate(req, res) {
         const provider = await Provider.findOne({
           where: { name: prd[i].provider },
         });
-        // console.log("provider");
-        // console.log(provider.id);
-        const categoryId = await Category.findOrCreate({
+        
+        const categoryId = prd[i].categoryId;
+        await Category.findOrCreate({
           where: { name: prd[i].category },
           defaults: {
             id: prd[i].categoryId,
@@ -68,8 +68,6 @@ async function bulkcreate(req, res) {
         await product.setTax(tax);
         await product.setState(prd[i].stateId);
         await product.setProvider(provider);
-        // console.log("cid");
-        // console.log(categoryId.id);
         await product.setCategory(categ);
 
         await product.setOwner(ownerId);
