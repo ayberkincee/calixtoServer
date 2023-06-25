@@ -4,7 +4,7 @@ const patchProduct = async (req, res) => {
   try {
     const { id } = req.params;
     const update = req.body;
-    const updatedProduct = Product.update(update, { where: { codigo: id } });
+    const updatedProduct = Product.update(update, { where: { id: id } });
     res.status(200);
     res.header("Access-Control-Allow-Origin", "*");
     res.json(updatedProduct);

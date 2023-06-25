@@ -4,7 +4,7 @@ const productmodel = (sequelize) => {
   sequelize.define(
     "product",
     {
-      codigo: {
+      id: {
         type: DataTypes.INTEGER,
         primaryKey: true,
         autoIncrement: false,
@@ -36,10 +36,6 @@ const productmodel = (sequelize) => {
       descripcion: {
         type: DataTypes.TEXT,
         allowNull: false,
-      },
-      prioridad: {
-        type: DataTypes.INTEGER,
-        defaultValue: 10
       }
     },
     { timestamps: false }

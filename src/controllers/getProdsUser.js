@@ -51,11 +51,11 @@ const getProdsUser = async (req, res) => {
     // console.log("produser q");
     // console.log(prodUser);
 
-    const prodUserId = prodUser.map((p) => p.codigo); //prodUserId is an array of id of products
+    const prodUserId = prodUser.map((p) => p.id); //prodUserId is an array of id of products
     // console.log("prodUserId");
     // console.log(prodUserId);
     prodUser = await Product.findAll({
-      where: { codigo: prodUserId },
+      where: { id: prodUserId },
       include: [
         {
           model: Provider,
@@ -86,7 +86,7 @@ const getProdsUser = async (req, res) => {
     // console.log(prodUser[0].icons);
 
     let prove = prodUser.map((p) => p.provider.name);
-    let categ = prodUser.map((p) => p.category.name);
+    let categ = prodUser.map((p) => p.category?.name);
     //prove is an array with prividers names
     // console.log("prove s");
     // console.log(prove);

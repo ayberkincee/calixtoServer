@@ -6,18 +6,19 @@ const getAllOwners = require("../controllers/getAllOwners");
 const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
-const loadDb = require("../controllers/loadDb");
+const updateProducts = require("../controllers/updateProducts");
 const getSession = require("../controllers/getSession");
-const bulkLoadDb = require("../controllers/bulkLoadDb");
+const bulkcreate = require("../controllers/bulkcreate");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
 const test = require("../controllers/test");
+const InitLoad = require("../controllers/initLoad");
 
 const router = Router();
 
 //----------------------USER ROUTES-------------------------
-router.post("/session", getSession)
+router.post("/session", getSession);
 
 router.get("/owners", getAllOwners);
 //returns an array of owners objects
@@ -36,17 +37,20 @@ router.get("/prodsuser/:userId", getProdsUser);
 
 router.post("/product", postProduct);
 
-router.post("/bulkcreate", bulkLoadDb);
+router.post("/bulkcreate", bulkcreate);
 
 router.patch("/product/:id", patchProduct);
 
 router.delete("/product/:id", deleteProduct);
 
 //-------------------------PROVISIONAL------------------------
-router.post("/load", loadDb);
 
-router.get('/test', test);
+router.patch("/updateProducts", updateProducts);
 
-router.post("/state/:id", postState)
+router.get("/test", test);
+
+router.post("/state/:id", postState);
+
+router.get("/initLoad", InitLoad);
 
 module.exports = router;

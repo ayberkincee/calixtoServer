@@ -1,39 +1,26 @@
+//Solo crea los productos que no existen previamente en la bd
+
+
+//imports the models
 const {
   Product,
   Provider,
   Tax,
   Category,
-  Owner,
-  State,
-  Icon,
-  User,
-  Portfolio,
 } = require("../db.js");
 
-const { dataDb } = require("../assets/dataDb.js");
-
 //------------------------------------------------------------
-async function bulkLoadDb(req, res) {
-  // try {
-    await Tax.bulkCreate(dataDb.tax);
-    await State.bulkCreate(dataDb.state);
-    await Icon.bulkCreate(dataDb.icon);
-    await Owner.bulkCreate(dataDb.owner);
-    await Portfolio.bulkCreate(dataDb.portfolio);
-    const port = await Portfolio.findOne({ where: { id: 1 } });
-    await User.bulkCreate(dataDb.user);
-    const usr = await User.findOne({ where: { id: 1 } });
-    usr.setOwner(dataDb.owner[0].id);
-    // usr.addPortfolio(portfolio[0].id);
-    usr.addPortfolio(port.id);
+//receives the data sent after Papa parsed it
+async function bulkcreate(req, res) {
 
-    prd = req.body;
+    const prd = req.body.resultData;
+    const ownerId = req.body.owner
     //req.body is an array of product objects like the CSV
 
     for (let i = 0; i < prd.length; i++) {
       // req.body.map(async (prd) => {
       const prodExist = await Product.findOne({
-        where: { codigo: prd[i].codigo },
+        where: { id: prd[i].id },
       });
       if (!prodExist) {
         // Create product
@@ -60,27 +47,30 @@ async function bulkLoadDb(req, res) {
           },
         });
 
+        const categ = await Category.findOne({
+          where: {id: prd[i].categoryId}
+        })
+
         // console.log("sacando stateId...");
         const stateId = prd[i].state;
 
         // console.log("creando el producto ahora...");
         const product = await Product.create({
-          codigo: prd[i].codigo,
+          id: prd[i].id,
           nombre: prd[i].nombre,
           codigoBarras: prd[i].codigoBarras,
           embalaje: prd[i].embalaje,
           precioBase: prd[i].precioBase,
           prodUrl: prd[i].prodUrl,
-          descripcion: prd[i].descripcion,
-          prioridad: prd[i].prioridad
+          descripcion: prd[i].descripcion.slice(0,500),
         });
 
         await product.setTax(tax);
         await product.setState(prd[i].stateId);
         await product.setProvider(provider);
-        await product.setCategory(categoryId);
+        await product.setCategory(categ);
 
-        await product.setOwner(prd[i].ownerId);
+        await product.setOwner(ownerId);
         prd[i].keto === "SI" ? product.addIcon(1) : product.addIcon(7);
         prd[i].vegano === "SI" ? product.addIcon(2) : product.addIcon(8);
         prd[i].vegetariano === "SI" ? product.addIcon(3) : product.addIcon(9);
@@ -98,4 +88,4 @@ async function bulkLoadDb(req, res) {
   //   res.status(500).json({ error: error.message });
   // }
 }
-module.exports = bulkLoadDb;
+module.exports = bulkcreate;

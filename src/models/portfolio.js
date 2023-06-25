@@ -13,6 +13,10 @@ const portfoliomodel = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
+      priority: {
+        type: DataTypes.INTEGER,
+        defaultValue: 10
+      }
     },
     { timestamp: false }
   );
