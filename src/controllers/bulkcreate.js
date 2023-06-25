@@ -1,3 +1,4 @@
+//Solo crea los productos que no existen previamente en la bd
 
 
 //imports the models
@@ -61,7 +62,7 @@ async function bulkcreate(req, res) {
           embalaje: prd[i].embalaje,
           precioBase: prd[i].precioBase,
           prodUrl: prd[i].prodUrl,
-          descripcion: prd[i].descripcion,
+          descripcion: prd[i].descripcion.slice(0,500),
         });
 
         await product.setTax(tax);

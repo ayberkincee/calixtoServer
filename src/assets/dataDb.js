@@ -26,33 +26,33 @@ const dataDb = {
         plan: 50,
         logoOwner:
           "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
-        sloganOwner: "Modelando el mundo",
+        sloganOwner: "Modelando el Mundo",
         cardType: 1,
       },
       {
         id: 2,
         name: "SF Group",
-        password: "1",
+        password: "2",
         plan: 40,
         logoOwner:
           "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
-        sloganOwner: "Distribuyendo felicidad",
+        sloganOwner: "Distribuyendo Felicidad",
         cardType: 2,
       },
       {
         id: 3,
         name: "Grecco",
-        password: "1",
+        password: "3",
         plan: 30,
         logoOwner:
           "https://candyjobs.com.co/wp-content/uploads/2020/10/0805-LOGO-GRECO.png",
-        sloganOwner: "Toda una galleta",
+        sloganOwner: "Toda una Galleta",
         cardType: 3,
       },
       {
         id: 4,
         name: "Punto 4",
-        password: "1",
+        password: "4",
         plan: 20,
         logoOwner: "",
         sloganOwner: "Catalogo del Punto 4",
@@ -61,7 +61,7 @@ const dataDb = {
       {
         id: 5,
         name: "Punto 5",
-        password: "1",
+        password: "5",
         plan: 0,
         logoOwner: "",
         cardType: 2,
@@ -147,10 +147,10 @@ const dataDb = {
 
     user: [
       { id: 1, name: "VSthemma", password: "1" },
-      { id: 2, name: "VSFGroup", password: "1" },
-      { id: 3, name: "Gabriel", password: "1" },
-      { id: 4, name: "Juanpa", password: "1" },
-      { id: 5, name: "Obama", password: "1" },
+      { id: 2, name: "VSFGroup", password: "2" },
+      { id: 3, name: "Gabriel", password: "3" },
+      { id: 4, name: "Juanpa", password: "4" },
+      { id: 5, name: "Obama", password: "5" },
     ],
   
   portfolio: [

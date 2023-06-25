@@ -32,8 +32,8 @@ async function InitLoad(req, res) {
     usr.addPortfolio(port1.id);
 
     usr = await User.findOne({ where: { id: 2 } });
-    usr.setOwner(dataDb.owner[1].id);
-    usr.addPortfolio(port2.id);
+    usr.setOwner(dataDb.owner[1].id); //vendedor pertenece a SF 
+    usr.addPortfolio(port1.id);  //Portafolio Todos
 
     console.log("datos iniciales cargados! 👍🏻");
     res.status(200).send("carga OK");
