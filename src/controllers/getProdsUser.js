@@ -14,7 +14,8 @@ const getProdsUser = async (req, res) => {
   console.log(`served by getProdsUser for user ${req.params.userId}`);
   try {
     const { userId } = req.params;
-    //Encontrar los potafolios del usuario:
+
+    //1-Encontrar los potafolios del usuario:
     let usrPort = await User.findOne({
       where: { id: userId }, //find the user with id = userId
       include: [
@@ -24,16 +25,11 @@ const getProdsUser = async (req, res) => {
         },
       ],
     });
-
-    // console.log('usrPort');
-    // console.log(usrPort);
     usrPort = usrPort.portfolios.map((p) => p.id);
-    // console.log(`portafolios del usuario: ${usrPort}`);
-    // console.log(usrPort);
     //array of portfaolio ids for the user
 
+    //2- Encontrar los productos de esos portafolios:
     let prodUser = [];
-    //Encontrar los productos de esos portafolios:
 
     prodUser = await Portfolio.findAll({
       where: { id: usrPort },
@@ -44,16 +40,10 @@ const getProdsUser = async (req, res) => {
     });
 
     let pu = prodUser.map((p) => p.products);
-    // console.log('pu');
-    // console.log(pu);
     prodUser = [];
     pu.map((p) => p.map((q) => prodUser.push(q))); //prodUser is an array of objects of products
-    // console.log("produser q");
-    // console.log(prodUser);
-
     const prodUserId = prodUser.map((p) => p.id); //prodUserId is an array of id of products
-    // console.log("prodUserId");
-    // console.log(prodUserId);
+
     prodUser = await Product.findAll({
       where: { id: prodUserId },
       include: [
@@ -82,20 +72,16 @@ const getProdsUser = async (req, res) => {
         },
       ],
     });
-    // console.log("produser RRR");
-    // console.log(prodUser[0].icons);
+
+    console.log("produser RRR");
+    console.log(prodUser[0].existencia);
 
     let prove = prodUser.map((p) => p.provider.name);
     let categ = prodUser.map((p) => p.category?.name);
     //prove is an array with prividers names
-    // console.log("prove s");
-    // console.log(prove);
-    //pu = [];
-    //prove.map((p) => p.map((q) => pu.push(q)));
     prove = Array.from(new Set(prove));
     categ = Array.from(new Set(categ));
-    // console.log("prove t");
-    // console.log(prove);
+
     res.status(200).json({ prodUser, prove, categ });
   } catch (error) {
     res.status(400).json({ error: error.message });
