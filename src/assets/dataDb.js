@@ -22,27 +22,27 @@ const dataDb = {
       {
         id: 1,
         name: "Sthemma",
-        password: "qwer",
+        password: "1",
         plan: 50,
         logoOwner:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1684979344/calixto/Logo_huella_y52gwa.png",
+          "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
         sloganOwner: "Modelando el mundo",
         cardType: 1,
       },
       {
         id: 2,
         name: "SF Group",
-        password: "qwer",
+        password: "1",
         plan: 40,
         logoOwner:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1681872234/calixto/SFGroup_rz9wyr.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
         sloganOwner: "Distribuyendo felicidad",
         cardType: 2,
       },
       {
         id: 3,
         name: "Grecco",
-        password: "qwer",
+        password: "1",
         plan: 30,
         logoOwner:
           "https://candyjobs.com.co/wp-content/uploads/2020/10/0805-LOGO-GRECO.png",
@@ -52,7 +52,7 @@ const dataDb = {
       {
         id: 4,
         name: "Punto 4",
-        password: "qwer",
+        password: "1",
         plan: 20,
         logoOwner: "",
         sloganOwner: "Catalogo del Punto 4",
@@ -61,7 +61,7 @@ const dataDb = {
       {
         id: 5,
         name: "Punto 5",
-        password: "qwer",
+        password: "1",
         plan: 0,
         logoOwner: "",
         cardType: 2,
@@ -75,82 +75,82 @@ const dataDb = {
         id: 1,
         name: "keto",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Keto_bjwxe9.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/keto-01_ehd6ot.jpg",
       },
       {
         id: 2,
         name: "vegano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Vegan_niu9ta.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/vegan-01_ou8e0q.jpg",
       },
       {
         id: 3,
         name: "vegetariano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Vegetarian_eys2s4.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/vegetarian-01_mwbbe1.jpg",
       },
       {
         id: 4,
         name: "aptoDiabetico",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Diabetic_ifjsmh.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/diabetic-01_atrz7u.jpg",
       },
       {
         id: 5,
         name: "altoProteina",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/Protein_bdxjjk.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/protein-01_hueodb.jpg",
       },
       {
         id: 6,
         name: "sinGluten",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/Gluten_ubwtpz.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/gluten-01_wzsmvw.jpg",
       },
       {
         id: 7,
         name: "Xketo",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoKeto_hlneqz.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xketo-01_fog2ok.jpg",
       },
       {
         id: 8,
         name: "Xvegano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730194/calixto/NoVegan_w55mxp.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xvegan-01_vmib0d.jpg",
       },
       {
         id: 9,
         name: "Xvegetariano",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730192/calixto/NoVegetarian_cbwq6b.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xvegetarian-01_ljtyfd.jpg",
       },
       {
         id: 10,
         name: "XaptoDiabetico",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoDiabetic_m1usq2.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xdiabetic-01_tuzp9i.jpg",
       },
       {
         id: 11,
         name: "XaltoProteina",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoProtein_gi6vs0.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xprotein-01_z8rfa8.jpg",
       },
       {
         id: 12,
         name: "XsinGluten",
         iconUrl:
-          "https://res.cloudinary.com/dbxsr9mfc/image/upload/v1685730193/calixto/NoGluten_abuhjs.jpg",
+          "https://res.cloudinary.com/sthemma/calixto/iconos/xgluten-01_myropx.jpg",
       },
     ],
 
     user: [
-      { id: 1, name: "Mati", password: "qwer" },
-      { id: 2, name: "Juanfer", password: "qwer" },
-      { id: 3, name: "Gabriel", password: "qwer" },
-      { id: 4, name: "Juanpa", password: "qwer" },
-      { id: 5, name: "Obama", password: "qwer" },
+      { id: 1, name: "VSthemma", password: "1" },
+      { id: 2, name: "VSFGroup", password: "1" },
+      { id: 3, name: "Gabriel", password: "1" },
+      { id: 4, name: "Juanpa", password: "1" },
+      { id: 5, name: "Obama", password: "1" },
     ],
   
   portfolio: [
