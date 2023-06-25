@@ -32,7 +32,12 @@ const ownermodel = (sequelize) => {
       cardType: {
         type: DataTypes.INTEGER,
         allowNull: false
+      },
+      llegado: {
+        type: DataTypes.INTEGER,
+        defaultValue: 3
       }
+
     },
     { timestamps: false }
   );

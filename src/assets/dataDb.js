@@ -38,6 +38,7 @@ const dataDb = {
           "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
         sloganOwner: "Distribuyendo Felicidad",
         cardType: 2,
+        llegado: 2
       },
       {
         id: 3,

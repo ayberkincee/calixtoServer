@@ -11,7 +11,7 @@ const productmodel = (sequelize) => {
       },
       isActive: {
         type: DataTypes.BOOLEAN,
-        defaultValue: true
+        defaultValue: true,
       },
       nombre: {
         type: DataTypes.STRING,
@@ -36,7 +36,23 @@ const productmodel = (sequelize) => {
       descripcion: {
         type: DataTypes.TEXT,
         allowNull: false,
-      }
+      },
+      existencia: {
+        type: DataTypes.INTEGER,
+        defaultValue: 0,
+      },
+      rotacion: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
+      },
+      agotado: {
+        type: DataTypes.INTEGER,
+        defaultValue: 5,
+      },
+      limitado: {
+        type: DataTypes.INTEGER,
+        defaultValue: 15,
+      },
     },
     { timestamps: false }
   );
