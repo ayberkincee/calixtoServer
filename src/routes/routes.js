@@ -7,11 +7,13 @@ const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
 const updateProducts = require("../controllers/updateProducts");
+const patchAllProducts = require("../controllers/patchAllProducts")
 const getSession = require("../controllers/getSession");
 const bulkcreate = require("../controllers/bulkcreate");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
+const updateOwner = require("../controllers/updateOwner");
 const test = require("../controllers/test");
 const InitLoad = require("../controllers/initLoad");
 
@@ -29,6 +31,9 @@ router.get("/owner/:id", getOneOwner);
 router.get("/user/:id", getOneUser);
 //returns an user object
 
+//---------------------OWNER ROUTES---------------------
+router.patch("/updateOwner", updateOwner)
+
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);
 //returns an array of product objects
@@ -40,6 +45,8 @@ router.post("/product", postProduct);
 router.post("/bulkcreate", bulkcreate);
 
 router.patch("/product/:id", patchProduct);
+
+router.patch("/updateallproducts", patchAllProducts)
 
 router.delete("/product/:id", deleteProduct);
 

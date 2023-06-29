@@ -10,7 +10,16 @@ const getOneUser = async (req, res) => {
       include: [
         {
           model: Owner,
-          attributes: ["logoOwner", "name", "sloganOwner", "cardType", "plan" ],
+          attributes: [
+            "logoOwner",
+            "name",
+            "sloganOwner",
+            "cardType",
+            "plan",
+            "colorPrimario",
+            "colorSecundario",
+            "colorTerciario",
+          ],
         },
       ],
     });
