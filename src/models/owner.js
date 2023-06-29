@@ -36,7 +36,19 @@ const ownermodel = (sequelize) => {
       llegado: {
         type: DataTypes.INTEGER,
         defaultValue: 3
-      }
+      },
+      colorPrimario: { //Barra superior e iconos
+        type: DataTypes.STRING,
+        defaultValue: "E26C2C"
+      },
+      colorSecundario: { //background
+        type: DataTypes.STRING,
+        defaultValue: "B7DDFF"
+      },
+      colorTerciario: {  //otros
+        type: DataTypes.STRING,
+        defaultValue: "27457D"
+      },
 
     },
     { timestamps: false }

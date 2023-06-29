@@ -36,7 +36,7 @@ const dataDb = {
         plan: 40,
         logoOwner:
           "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
-        sloganOwner: "Distribuyendo Felicidad",
+        sloganOwner: "Eres lo que Comes",
         cardType: 2,
         llegado: 2
       },

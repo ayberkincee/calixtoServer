@@ -4,7 +4,7 @@ const { User } = require("../db.js");
 const getAllUsers = async (req, res) => {
   try{
   const ownerId = req.params.ownerId;
-  console.log(ownerId);
+  // console.log(ownerId);
   const users = await User.findAll({
     where: {
       ownerId: ownerId
