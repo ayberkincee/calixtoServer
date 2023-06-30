@@ -19,16 +19,7 @@ const dataDb = {
     //======================================================================
     // lo debe crear Sthemma cuando crea el Owner en la plataforma SuperAdmin
     owner: [
-      {
-        id: 1,
-        name: "Sthemma",
-        password: "1",
-        plan: 50,
-        logoOwner:
-          "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
-        sloganOwner: "Modelando el Mundo",
-        cardType: 1,
-      },
+      
       {
         id: 2,
         name: "SF Group",
@@ -36,7 +27,7 @@ const dataDb = {
         plan: 40,
         logoOwner:
           "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
-        sloganOwner: "Eres lo que Comes",
+        sloganOwner: "Come bien, siéntete bien",
         cardType: 2,
         llegado: 2
       },
