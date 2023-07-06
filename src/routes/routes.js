@@ -13,6 +13,7 @@ const bulkcreate = require("../controllers/bulkcreate");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
+const postOwner = require("../controllers/postOwner");
 const updateOwner = require("../controllers/updateOwner");
 const test = require("../controllers/test");
 const InitLoad = require("../controllers/initLoad");
@@ -32,6 +33,8 @@ router.get("/user/:id", getOneUser);
 //returns an user object
 
 //---------------------OWNER ROUTES---------------------
+router.post("/createowner", postOwner )
+
 router.patch("/updateOwner", updateOwner)
 
 //---------------------PRODUCT ROUTES---------------------
