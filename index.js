@@ -9,19 +9,19 @@ conn.sync({ force: true }).then( async() => {
     console.log(`server listening at ${PORT_SERVER}`); // eslint-disable-line no-console
   });
 
-  const options = {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({
-        id: 0,
-        name: "Sthemma",
-        password: 0,
-        plan: 50,
-        logoOwner:
-          "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
-        sloganOwner: "Modelando el Mundo",
-        cardType: 1,
-    }),
-  };
-  await fetch(SERVER_URL, options);
-});
+//   const options = {
+//     method: "POST",
+//     headers: { "Content-Type": "application/json" },
+//     body: JSON.stringify({
+//         id: 0,
+//         name: "Sthemma",
+//         password: 0,
+//         plan: 50,
+//         logoOwner:
+//           "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
+//         sloganOwner: "Modelando el Mundo",
+//         cardType: 1,
+//     }),
+//   };
+//   await fetch(SERVER_URL, options);
+// });

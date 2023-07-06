@@ -21,6 +21,17 @@ const dataDb = {
     owner: [
       
       {
+        id: 0,
+        name: "Sthemma",
+        password: "0",
+        plan: 50,
+        logoOwner:
+          "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
+        sloganOwner: "Modelando el mundo",
+        cardType: 2,
+        llegado: 2
+      },
+      {
         id: 1,
         name: "SF Group",
         password: "1",
@@ -138,6 +149,7 @@ const dataDb = {
     ],
 
     user: [
+      { id: 0, name: "VSSthemma", password: "0" },
       { id: 1, name: "VSFGroup", password: "valeria" },
       { id: 2, name: "Gabriel", password: "2" },
       { id: 3, name: "Juanpa", password: "3" },
