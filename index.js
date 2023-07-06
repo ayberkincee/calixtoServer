@@ -24,4 +24,4 @@ conn.sync({ force: true }).then( async() => {
 //     }),
 //   };
 //   await fetch(SERVER_URL, options);
-// });
+});
