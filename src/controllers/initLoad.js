@@ -28,11 +28,11 @@ async function InitLoad(req, res) {
     await User.bulkCreate(dataDb.user);
 
     let usr = await User.findOne({ where: { id: 1 } });
-    usr.setOwner(dataDb.owner[0].id);
+    usr.setOwner(dataDb.owner[1].id);
     usr.addPortfolio(port1.id);
 
     usr = await User.findOne({ where: { id: 2 } });
-    usr.setOwner(dataDb.owner[1].id); //vendedor pertenece a SF 
+    usr.setOwner(dataDb.owner[2].id); //vendedor pertenece a SF 
     usr.addPortfolio(port1.id);  //Portafolio Todos
 
     console.log("datos iniciales cargados! 👍🏻");
