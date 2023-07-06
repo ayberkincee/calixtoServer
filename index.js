@@ -13,9 +13,9 @@ conn.sync({ force: true }).then( async() => {
     method: "POST",
     headers: { "Content-Type": "application/json" },
     body: JSON.stringify({
-        id: 1,
+        id: 0,
         name: "Sthemma",
-        password: 1,
+        password: 0,
         plan: 50,
         logoOwner:
           "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
