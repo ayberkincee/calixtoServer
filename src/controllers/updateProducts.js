@@ -6,7 +6,7 @@ async function updateProducts(req, res) {
   try {
     products.forEach(async (p) => {
     p.descripcion ? 
-    p.descripcion = p.descripcion.slice(0,200)
+    p.descripcion = p.descripcion.slice(0,500)
     :
     null; 
     const r = await Product.update(p, { where: { id: p.id } });
