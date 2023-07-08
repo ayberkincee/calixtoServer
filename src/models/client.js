@@ -1,8 +1,8 @@
 const { DataTypes } = require("sequelize");
 
-const usermodel = (sequelize) => {
+const clientmodel = (sequelize) => {
   sequelize.define(
-    "user",
+    "client",
     {
       id: {
         type: DataTypes.INTEGER,
@@ -13,12 +13,16 @@ const usermodel = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      password: {
+      email: {
         type: DataTypes.STRING,
-        allowNull: false,
+        allowNull: true,
+      },
+      phone: {
+        type: DataTypes.INTEGER,
+        allowNull: true,
       },
     },
-    { timestamps: false }
+    { timeStamps: false }
   );
 };
-module.exports = usermodel;
+module.exports = clientmodel;
