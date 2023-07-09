@@ -31,10 +31,11 @@ fs.readdirSync(path.join(__dirname, "/models"))
     modelDefiners.push(require(path.join(__dirname, "/models", file)));
   });
 
-console.log("modelDefiners");
-console.log(modelDefiners);
+// console.log("modelDefiners");
+// console.log(modelDefiners);
 
-// Injectamos la conexion (sequelize) a todos los modelos: crea la instancia de cada modelo y lo incluye en sequelize.models
+// Injectamos la conexion (sequelize) a todos los modelos: 
+//crea la instancia de cada modelo y lo incluye en sequelize.models
 modelDefiners.forEach((model) => model(sequelize));
 // Capitalizamos los nombres de los modelos ie: product => Product
 let entries = Object.entries(sequelize.models);
@@ -56,10 +57,8 @@ const {
   State,
   Portfolio,
   User,
+  Client
 } = sequelize.models;
-
-// Product.belongsToMany(Provider, { through: "ProdProve" });
-// Provider.belongsToMany(Product, { through: "ProdProve" });
 
 Product.belongsToMany(Icon, { through: "ProdIcon" });
 Icon.belongsToMany(Product, { through: "ProdIcon" });
@@ -90,6 +89,9 @@ Owner.hasMany(Product);
 
 User.belongsTo(Owner);
 Owner.hasMany(User);
+
+Client.belongsTo(User);
+User.hasMany(Client);
 
 module.exports = {
   ...sequelize.models, // para poder importar los modelos así: const { Product, User } = require('./db.js');

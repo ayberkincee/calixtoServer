@@ -17,6 +17,8 @@ const postOwner = require("../controllers/postOwner");
 const updateOwner = require("../controllers/updateOwner");
 const test = require("../controllers/test");
 const InitLoad = require("../controllers/initLoad");
+const postClient = require("../controllers/postClient");
+const getClient = require("../controllers/getClient");
 
 const router = Router();
 
@@ -31,6 +33,8 @@ router.get("/owner/:id", getOneOwner);
 //returns an owner object
 router.get("/user/:id", getOneUser);
 //returns an user object
+router.post('/client', postClient);
+router.get('/client/:id', getClient);
 
 //---------------------OWNER ROUTES---------------------
 router.post("/createowner", postOwner )
