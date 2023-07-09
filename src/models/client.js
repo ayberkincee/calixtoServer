@@ -18,7 +18,7 @@ const clientmodel = (sequelize) => {
         allowNull: true,
       },
       phone: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.BIGINT,
         allowNull: true,
       },
     },
