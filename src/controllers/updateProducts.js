@@ -1,3 +1,5 @@
+//Updates only the products that exist in database
+
 const { Product } = require("../db.js");
 
 async function updateProducts(req, res) {
@@ -5,11 +7,11 @@ async function updateProducts(req, res) {
 
   try {
     products.forEach(async (p) => {
-    p.descripcion ? 
-    p.descripcion = p.descripcion.slice(0,500)
-    :
-    null; 
-    const r = await Product.update(p, { where: { id: p.id } });
+      const prodExist = Product.findOne({ where: { id: p.id } });
+      if (prodExist) {
+        p.descripcion ? (p.descripcion = p.descripcion.slice(0, 500)) : null;
+        const r = await Product.update(p, { where: { id: p.id } });
+      }
     });
     res.status(200).send("cargue de DB OK");
   } catch (err) {

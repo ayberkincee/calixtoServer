@@ -19,6 +19,7 @@ const test = require("../controllers/test");
 const InitLoad = require("../controllers/initLoad");
 const postClient = require("../controllers/postClient");
 const getClient = require("../controllers/getClient");
+const recordSell = require("../controllers/recordSell");
 
 const router = Router();
 
@@ -56,6 +57,8 @@ router.patch("/product/:id", patchProduct);
 router.patch("/updateallproducts", patchAllProducts)
 
 router.delete("/product/:id", deleteProduct);
+
+router.post('/recSell', recordSell);
 
 //-------------------------PROVISIONAL------------------------
 

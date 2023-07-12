@@ -4,7 +4,9 @@ const sellsmodel = (sequelize) => {
     sequelize.define("sells",{
         id:{
             type: DataTypes.UUID,
-            primaryKey: true
+            defaultValue: DataTypes.UUIDV4,
+            primaryKey: true,
+            
         },
         productCodigo: {
             type: DataTypes.INTEGER,
