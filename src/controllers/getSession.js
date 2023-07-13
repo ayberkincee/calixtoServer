@@ -3,7 +3,7 @@ const { Owner } = require("../db.js");
 
 const getSession = async (req, res) => {
     try {
-        console.log(req.body);
+        // console.log(req.body);
         const { email, password } = req.body;
         const found = await Owner.findOne({
             where: {
