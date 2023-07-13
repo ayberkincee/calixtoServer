@@ -9,10 +9,10 @@ async function postClient(req, res) {
   // try{
   const ClientDb = await Client.findByPk(id);
   if (ClientDb) {
-    console.log("updating client");
+    // console.log("updating client");
     await Client.update(myClient, { where: { id: id } });
   } else {
-    console.log("creating client");
+    // console.log("creating client");
     await Client.create(myClient);
   }
 

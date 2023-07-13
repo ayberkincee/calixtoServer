@@ -35,7 +35,7 @@ async function InitLoad(req, res) {
     usr.setOwner(dataDb.owner[2].id); //vendedor pertenece a SF 
     usr.addPortfolio(port1.id);  //Portafolio Todos
 
-    console.log("datos iniciales cargados! 👍🏻");
+    // console.log("datos iniciales cargados! 👍🏻");
     res.status(200).send("carga OK");
   } catch (err) {
     res.status(500).json({ error: err });

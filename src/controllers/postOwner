@@ -7,7 +7,7 @@ async function postOwner(req, res) {
     where: { id: owner.id },
     defaults: owner,
   });
-  console.log("onwer created");
+  // console.log("onwer created");
   res.status(200).json(newOwner);
     } catch (error) {
   res.status(500).json({ err: error }); 

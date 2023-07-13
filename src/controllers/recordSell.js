@@ -14,7 +14,7 @@ async function recordSell(req, res) {
         }
     )
   }
-  console.log(sellsToDb);
+  // console.log(sellsToDb);
 
   await Sells.bulkCreate(sellsToDb)
   res.status(200).send('sell in db');
