@@ -20,6 +20,8 @@ const InitLoad = require("../controllers/initLoad");
 const postClient = require("../controllers/postClient");
 const getClient = require("../controllers/getClient");
 const recordSell = require("../controllers/recordSell");
+const getOpenSells = require("../controllers/getOpenSells");
+const closeSells = require("../controllers/closeSells");
 
 const router = Router();
 
@@ -59,6 +61,11 @@ router.patch("/updateallproducts", patchAllProducts)
 router.delete("/product/:id", deleteProduct);
 
 router.post('/recSell', recordSell);
+
+router.get('/openSells/:userId', getOpenSells);
+//trae de bd las open sells
+
+router.post('/closeSells', closeSells);
 
 //-------------------------PROVISIONAL------------------------
 
