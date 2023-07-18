@@ -22,12 +22,12 @@ const getClient = require("../controllers/getClient");
 const recordSell = require("../controllers/recordSell");
 const getOpenSells = require("../controllers/getOpenSells");
 const closeSells = require("../controllers/closeSells");
+const getProduct = require("../controllers/getProduct");
 
 const router = Router();
 
-//----------------------USER ROUTES-------------------------
+//----------------------PEOPLE ROUTES-------------------------
 router.post("/session", getSession);
-
 router.get("/owners", getAllOwners);
 //returns an array of owners objects
 router.get("/users/:ownerId", getAllUsers);
@@ -36,12 +36,9 @@ router.get("/owner/:id", getOneOwner);
 //returns an owner object
 router.get("/user/:id", getOneUser);
 //returns an user object
+router.get('/client/:clientId', getClient);
 router.post('/client', postClient);
-router.get('/client/:id', getClient);
-
-//---------------------OWNER ROUTES---------------------
 router.post("/createowner", postOwner )
-
 router.patch("/updateOwner", updateOwner)
 
 //---------------------PRODUCT ROUTES---------------------
@@ -49,32 +46,20 @@ router.get("/prodsowner/:owner", getProdsOwner);
 //returns an array of product objects
 router.get("/prodsuser/:userId", getProdsUser);
 //returns an array of product objects
-
+router.get("/product/:productCodigo", getProduct);
 router.post("/product", postProduct);
-
 router.post("/bulkcreate", bulkcreate);
-
 router.patch("/product/:id", patchProduct);
-
 router.patch("/updateallproducts", patchAllProducts)
-
 router.delete("/product/:id", deleteProduct);
-
 router.post('/recSell', recordSell);
-
 router.get('/openSells/:userId', getOpenSells);
 //trae de bd las open sells
-
 router.post('/closeSells', closeSells);
 
 //-------------------------PROVISIONAL------------------------
-
 router.patch("/updateProducts", updateProducts);
-
 router.get("/test", test);
-
 router.post("/state/:id", postState);
-
 router.get("/initLoad", InitLoad);
-
 module.exports = router;

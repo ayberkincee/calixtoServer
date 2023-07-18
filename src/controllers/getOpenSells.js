@@ -1,8 +1,8 @@
-const { Sells } = require("../db");
+const { Sell } = require("../db");
 
 async function getOpenSells(req, res) {
   const {userId} = req.params;
-  const sells = await Sells.findAll({
+  const sells = await Sell.findAll({
     where: {
       pending: true,
       userId: userId,

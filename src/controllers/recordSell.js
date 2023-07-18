@@ -1,5 +1,5 @@
 // await axios.post('/recSell', {userId, clienteBuscado, sells})
-const {Sells} = require("../db.js");
+const {Sell} = require("../db.js");
 
 async function recordSell(req, res) {
   let sells = req.body.sells;
@@ -16,7 +16,7 @@ async function recordSell(req, res) {
   }
   // console.log(sellsToDb);
 
-  await Sells.bulkCreate(sellsToDb)
+  await Sell.bulkCreate(sellsToDb)
   res.status(200).send('sell in db');
 }
 module.exports = recordSell;
