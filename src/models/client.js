@@ -21,6 +21,10 @@ const clientmodel = (sequelize) => {
         type: DataTypes.BIGINT,
         allowNull: true,
       },
+      address: {
+        type: DataTypes.STRING,
+        allowNull: true
+      }
     },
     { timeStamps: false }
   );
