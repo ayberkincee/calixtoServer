@@ -44,11 +44,12 @@ const dataDb = {
       },
       {
         id: 2,
-        name: "Grecco",
+        name: "SFGroup",
         password: "2",
         plan: 30,
         logoOwner:
-          "https://candyjobs.com.co/wp-content/uploads/2020/10/0805-LOGO-GRECO.png",
+        // "https://candyjobs.com.co/wp-content/uploads/2020/10/0805-LOGO-GRECO.png",
+        "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
         sloganOwner: "Toda una Galleta",
         cardType: 3,
       },
