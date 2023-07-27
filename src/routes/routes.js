@@ -1,28 +1,34 @@
 const { Router } = require("express");
-const getProdsOwner = require("../controllers/getProdsOwner");
-const getProdsUser = require("../controllers/getProdsUser");
-const postProduct = require("../controllers/postProduct");
+//People routes
 const getAllOwners = require("../controllers/getAllOwners");
 const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
+const getSession = require("../controllers/getSession");
+const postOwner = require("../controllers/postOwner");
+const updateOwner = require("../controllers/updateOwner");
+const postClient = require("../controllers/postClient");
+const getClient = require("../controllers/getClient");
+const getAllClientsUser = require("../controllers/getAllClientsUser")
+
+//Product routes
+const getProdsOwner = require("../controllers/getProdsOwner");
+const getProdsUser = require("../controllers/getProdsUser");
+const postProduct = require("../controllers/postProduct");
 const updateProducts = require("../controllers/updateProducts");
 const patchAllProducts = require("../controllers/patchAllProducts")
-const getSession = require("../controllers/getSession");
 const bulkcreate = require("../controllers/bulkcreate");
 const postState = require("../controllers/postState");
 const patchProduct = require("../controllers/patchProduct");
 const deleteProduct = require("../controllers/deleteProduct");
-const postOwner = require("../controllers/postOwner");
-const updateOwner = require("../controllers/updateOwner");
-const test = require("../controllers/test");
-const InitLoad = require("../controllers/initLoad");
-const postClient = require("../controllers/postClient");
-const getClient = require("../controllers/getClient");
 const recordSell = require("../controllers/recordSell");
 const getOpenSells = require("../controllers/getOpenSells");
 const closeSells = require("../controllers/closeSells");
 const getProduct = require("../controllers/getProduct");
+
+//other
+const test = require("../controllers/test");
+const InitLoad = require("../controllers/initLoad");
 
 const router = Router();
 
@@ -40,6 +46,7 @@ router.get('/client/:clientId', getClient);
 router.post('/client', postClient);
 router.post("/createowner", postOwner )
 router.patch("/updateOwner", updateOwner)
+router.get("/clients/:uId", getAllClientsUser)
 
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);

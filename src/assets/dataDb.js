@@ -26,7 +26,7 @@ const dataDb = {
         password: "0",
         plan: 50,
         logoOwner:
-          "https://res.cloudinary.com/sthemma/calixto/LogoSthemma_pfz4fs.jpg",
+          "https://res.cloudinary.com/sthemma/image/upload/v1687659529/calixto/logosProveedores/sthemma.jpg",
         sloganOwner: "Modelando el mundo",
         cardType: 2,
         llegado: 2
@@ -37,7 +37,7 @@ const dataDb = {
         password: "1",
         plan: 40,
         logoOwner:
-          "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
+          "https://res.cloudinary.com/sthemma/image/upload/v1687712049/calixto/logosProveedores/sfgroup.png",
         sloganOwner: "Come bien, siéntete bien",
         cardType: 2,
         llegado: 2
@@ -49,7 +49,7 @@ const dataDb = {
         plan: 30,
         logoOwner:
         // "https://candyjobs.com.co/wp-content/uploads/2020/10/0805-LOGO-GRECO.png",
-        "https://res.cloudinary.com/sthemma/calixto/SFGroup_rz9wyr.jpg",
+        "https://res.cloudinary.com/sthemma/image/upload/v1687712049/calixto/logosProveedores/sfgroup.png",
         sloganOwner: "Toda una Galleta",
         cardType: 3,
       },
