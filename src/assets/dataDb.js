@@ -1,6 +1,7 @@
 const dataDb = {
   //======================================================================
   //lo crea la app cuando la bd esta vacia
+  //a futuro el owner los podrá modificar
   state: [
     { name: "disponible" },
     { name: "llegado" },
