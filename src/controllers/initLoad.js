@@ -16,7 +16,7 @@ const {
 const { dataDb } = require("../assets/dataDb.js");
 
 async function InitLoad(req, res) {
-  console.log("served by InitLoad");
+  // console.log("served by InitLoad");
   try {
     await Tax.bulkCreate(dataDb.tax);
     await State.bulkCreate(dataDb.state);

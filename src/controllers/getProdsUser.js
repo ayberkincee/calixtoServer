@@ -11,7 +11,7 @@ const {
 } = require("../db.js");
 
 const getProdsUser = async (req, res) => {
-  console.log(`served by getProdsUser for user ${req.params.userId}`);
+  // console.log(`served by getProdsUser for user ${req.params.userId}`);
   try {
     const { userId } = req.params;
 

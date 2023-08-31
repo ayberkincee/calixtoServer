@@ -17,16 +17,16 @@ async function bulkcreate(req, res) {
       where: { id: prd[i].id },
     });
     
-    console.log("existe?",prodExist);
+    // console.log("existe?",prodExist);
     
     if (!prodExist) {
-      console.log("creando producto ",prd[i]);
+      // console.log("creando producto ",prd[i]);
       // Create product
       const tax = await Tax.findOne({
         where: { tax: prd[i].tax },
       });
       
-      console.log("found tax ", tax );
+      // console.log("found tax ", tax );
       
       // console.log("creando el proveedor ahora...");
       await Provider.findOrCreate({
@@ -36,7 +36,7 @@ async function bulkcreate(req, res) {
         where: { name: prd[i].provider },
       });
 
-      console.log("found provider ", provider);
+      // console.log("found provider ", provider);
       
       //const categoryId = prd[i].categoryId;
       await Category.findOrCreate({
@@ -50,7 +50,7 @@ async function bulkcreate(req, res) {
         where: { id: prd[i].categoryId },
       });
 
-      console.log("found Categ ", categ);
+      // console.log("found Categ ", categ);
       
       // console.log("creando el producto ahora...");
       const product = await Product.create({

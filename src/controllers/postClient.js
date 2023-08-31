@@ -1,7 +1,7 @@
 const { Client, User } = require("../db.js");
 
 async function postClient(req, res) {
-  console.log("atendido por postClient");
+  // console.log("atendido por postClient");
   const myClient = req.body;
   const {id} = myClient;
   const {userId} = myClient
