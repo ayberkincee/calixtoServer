@@ -1,7 +1,7 @@
 const { Product } = require("../db.js");
 
 const patchProduct = async (req, res) => {
-console.log("atendido por patchProduct");
+// console.log("atendido por patchProduct");
   try {
     const { id } = req.params;
     const update = req.body;

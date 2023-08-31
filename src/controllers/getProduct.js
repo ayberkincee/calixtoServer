@@ -14,7 +14,7 @@ async function getProduct(req, res) {
     
   })
  
-  console.log("prodBack",prod);
+  // console.log("prodBack",prod);
   res.status(200).json(prod);
 }
 module.exports = getProduct;

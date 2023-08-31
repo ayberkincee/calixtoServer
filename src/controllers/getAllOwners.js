@@ -2,7 +2,7 @@
 const { Owner } = require("../db.js");
 
 const getAllOwners = async (req, res) => {
-  console.log("atendido por getAllOwners");
+  // console.log("atendido por getAllOwners");
   try {
     let allOwners = await Owner.findAll();
     // console.log("allOwners",allOwners);
