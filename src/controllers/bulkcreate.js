@@ -58,6 +58,8 @@ async function bulkcreate(req, res) {
           where: { id: categoryId },
         });
 
+//========AQUI ACTUALIZAR EL NOMBRE DE LA CATEGORIA==========
+
         // console.log("found Categ ", categ);
 
         // console.log("creando el producto ahora...");

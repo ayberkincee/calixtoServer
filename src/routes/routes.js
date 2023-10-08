@@ -11,6 +11,7 @@ const postClient = require("../controllers/postClient");
 const getClient = require("../controllers/getClient");
 const getAllClientsUser = require("../controllers/getAllClientsUser");
 const updateUser = require("../controllers/updateUser");
+const postUser = require("../controllers/postUser");
 
 //Product routes
 const getProdsOwner = require("../controllers/getProdsOwner");
@@ -51,6 +52,7 @@ router.post("/createowner", postOwner);
 router.patch("/updateOwner", updateOwner);
 router.patch("/updateClient", updateClient);
 router.patch("/updateUser", updateUser);
+router.post("/createUser", postUser)
 
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);
