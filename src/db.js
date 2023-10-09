@@ -7,6 +7,8 @@ const path = require("path");
 const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY } = process.env;
 const DB_PORT = 5432;
 
+console.log('connecting to database...');
+
 //database conection:
 const sequelize = new Sequelize(
   //   // `postgres://${DB_USER}:${DB_PASSWORD}@${DB_HOST}:${DB_PORT}/Calixtotest`,
@@ -20,6 +22,8 @@ const sequelize = new Sequelize(
 const basename = path.basename(__filename);
 
 const modelDefiners = [];
+
+console.log('defining models...');
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, "/models"))
@@ -59,6 +63,8 @@ const {
   User,
   Client
 } = sequelize.models;
+
+console.log('creating relations...');
 
 Product.belongsToMany(Icon, { through: "ProdIcon" });
 Icon.belongsToMany(Product, { through: "ProdIcon" });
