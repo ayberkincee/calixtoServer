@@ -61,13 +61,17 @@ const {
   State,
   Portfolio,
   User,
-  Client
+  Client,
+  Channel
 } = sequelize.models;
 
 console.log('creating relations...');
 
 Product.belongsToMany(Icon, { through: "ProdIcon" });
 Icon.belongsToMany(Product, { through: "ProdIcon" });
+
+Product.belongsToMany(Channel, {through: "ProdChannel"});
+Channel.belongsToMany(Product, {through: "ProdChannel"});
 
 Product.belongsToMany(Portfolio, { through: "ProdPort" });
 Portfolio.belongsToMany(Product, { through: "ProdPort" });

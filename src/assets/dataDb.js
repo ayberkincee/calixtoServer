@@ -150,6 +150,16 @@ const dataDb = {
       },
     ],
 
+    canales: [
+      {id: 1, name: "saludable"},
+      {id: 2, name: "autoservicio"},
+      {id: 3, name: "gym"},
+      {id: 4, name: "cafesCow"},
+      {id: 5, name: "horeca"},
+      {id: 6, name: "licoStores"},
+      {id: 7, name: "educacion"},
+    ],
+    
     user: [
       { id: 0, name: "VSSthemma", password: "0" },
       { id: 1, name: "VSFGroup", password: "valeria" },
