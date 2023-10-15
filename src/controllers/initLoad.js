@@ -9,6 +9,7 @@ const {
   Icon,
   User,
   Portfolio,
+  Channel
 } = require("../db.js");
 
 //gets the local data needed to populate the database
@@ -21,6 +22,7 @@ async function InitLoad(req, res) {
     await Tax.bulkCreate(dataDb.tax);
     await State.bulkCreate(dataDb.state);
     await Icon.bulkCreate(dataDb.icon);
+    await Channel.bulkCreate(dataDb.canales);
     await Owner.bulkCreate(dataDb.owner);
     await Portfolio.bulkCreate(dataDb.portfolio);
     const port1 = await Portfolio.findOne({ where: { id: 1 } });

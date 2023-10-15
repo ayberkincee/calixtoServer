@@ -8,6 +8,7 @@ const {
   Category,
   Tax,
   State,
+  Channel,
 } = require("../db.js");
 
 const getProdsUser = async (req, res) => {
@@ -59,6 +60,13 @@ const getProdsUser = async (req, res) => {
           },
         },
         {
+          model: Channel,
+          attributes: ["id", "name"],
+          through: {
+            attributes: [],
+          }
+        },
+        {
           model: Category,
           attributes: ["id", "name"],
         },
@@ -70,6 +78,7 @@ const getProdsUser = async (req, res) => {
           model: State,
           attributes: ["id"],
         },
+        
       ],
     });
 
