@@ -9,7 +9,7 @@ const channelmodel = (sequelize) =>{
         },
         name: {
             type: DataTypes.STRING,
-            defaultValue: "NONE"
+            defaultValue: "saludable"
         }
     },
     {timestamps: false}
