@@ -69,9 +69,9 @@ router.post("/recSell", recordSell);
 router.get("/openSells/:userId", getOpenSells);
 //trae de bd las open sells
 router.post("/closeSells", closeSells);
+router.patch("/updateProducts", updateProducts);
 
 //-------------------------PROVISIONAL------------------------
-router.patch("/updateProducts", updateProducts);
 router.get("/test", test);
 router.post("/state/:id", postState);
 router.get("/initLoad", InitLoad);
