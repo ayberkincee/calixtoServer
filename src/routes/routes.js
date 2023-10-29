@@ -32,6 +32,8 @@ const getProduct = require("../controllers/getProduct");
 const test = require("../controllers/test");
 const InitLoad = require("../controllers/initLoad");
 const updateClient = require("../controllers/updateClient");
+const postStats = require("../controllers/postStats");
+const getStats = require("../controllers/getStats");
 
 const router = Router();
 
@@ -70,6 +72,10 @@ router.get("/openSells/:userId", getOpenSells);
 //trae de bd las open sells
 router.post("/closeSells", closeSells);
 router.patch("/updateProducts", updateProducts);
+
+//-------------------------OTHER------------------------------
+router.post("/postStats", postStats);
+router.get("/getStats", getStats);
 
 //-------------------------PROVISIONAL------------------------
 router.get("/test", test);
