@@ -1,6 +1,6 @@
-const { Stats } = require("../db");
+const { Stats } = require("../db.js");
 
-async function postStats(req, res) {
+const postStats = async (req, res) => {
   //adds a record to the stats table with the action performed by the user
   const { location, action, detail } = req.body;
   try {
@@ -9,9 +9,9 @@ async function postStats(req, res) {
       action,
       detail,
     });
-    res.status(200);
+    res.status(200).send("estadistica guardada");
   } catch (error) {
     res.status(400).json({ error: error });
   }
-}
+};
 module.exports = postStats;

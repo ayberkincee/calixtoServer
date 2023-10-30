@@ -84,7 +84,7 @@ const getProdsUser = async (req, res) => {
 
     let prove = prodUser.map((p) => p.provider.name);
     let categ = prodUser.map((p) => p.category.name);
-    console.log("categs from getProdUser", new Set(categ));
+    // console.log("categs from getProdUser", new Set(categ));
     //prove is an array with prividers names
     prove = Array.from(new Set(prove));
     categ = Array.from(new Set(categ));
