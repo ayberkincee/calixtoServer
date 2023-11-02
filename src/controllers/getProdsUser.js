@@ -81,9 +81,9 @@ const getProdsUser = async (req, res) => {
         
       ],
     });
-
-    let prove = prodUser.map((p) => p.provider.name);
-    let categ = prodUser.map((p) => p.category.name);
+    // console.log(prodUser[0].category);
+    let prove = prodUser.map((p) => p.provider?.name);
+    let categ = prodUser.map((p) => p.category?.name);
     // console.log("categs from getProdUser", new Set(categ));
     //prove is an array with prividers names
     prove = Array.from(new Set(prove));
@@ -91,6 +91,7 @@ const getProdsUser = async (req, res) => {
 
     res.status(200).json({ prodUser, prove, categ });
   } catch (error) {
+    console.log("WWW",error);
     res.status(400).json({ error: error.message });
   }
 };
