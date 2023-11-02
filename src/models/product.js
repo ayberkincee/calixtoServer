@@ -22,7 +22,7 @@ const productmodel = (sequelize) => {
         allowNull: false,
       },
       embalaje: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         allowNull: false,
       },
       precioBase: {
