@@ -91,7 +91,7 @@ const getProdsUser = async (req, res) => {
 
     res.status(200).json({ prodUser, prove, categ });
   } catch (error) {
-    console.log("WWW",error);
+    //console.log("WWW",error);
     res.status(400).json({ error: error.message });
   }
 };
