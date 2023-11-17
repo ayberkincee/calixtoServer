@@ -75,7 +75,7 @@ router.patch("/updateProducts", updateProducts);
 
 //-------------------------OTHER------------------------------
 router.post("/postStats", postStats);
-router.get("/getStats", getStats);
+router.post("/getStats", getStats);
 
 //-------------------------PROVISIONAL------------------------
 router.get("/test", test);
