@@ -4,6 +4,7 @@ const getAllOwners = require("../controllers/getAllOwners");
 const getAllUsers = require("../controllers/getAllUsers");
 const getOneOwner = require("../controllers/getOneOwner");
 const getOneUser = require("../controllers/getOneUser");
+const getEveryUser = require("../controllers/getEveryUser");
 const getSession = require("../controllers/getSession");
 const postOwner = require("../controllers/postOwner");
 const updateOwner = require("../controllers/updateOwner");
@@ -43,6 +44,7 @@ router.get("/owners", getAllOwners);
 //returns an array of owners objects
 router.get("/users/:ownerId", getAllUsers);
 //returns an array of users objects
+router.get("/everyuser/",getEveryUser);
 router.get("/owner/:id", getOneOwner);
 //returns an owner object
 router.get("/user/:id", getOneUser);
@@ -54,7 +56,7 @@ router.post("/createowner", postOwner);
 router.patch("/updateOwner", updateOwner);
 router.patch("/updateClient", updateClient);
 router.patch("/updateUser", updateUser);
-router.post("/createUser", postUser)
+router.post("/createUser", postUser);
 
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);

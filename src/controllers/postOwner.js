@@ -1,6 +1,6 @@
 const { Owner } = require("../db");
 
-async function postOwner(req, res) {
+const postOwner = async(req, res) => {
   const owner = req.body;
     try {
   const newOwner = await Owner.findOrCreate({
