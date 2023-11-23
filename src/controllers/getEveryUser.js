@@ -1,5 +1,5 @@
 const { User } = require("../db");
-
+//brings all users
 const getEveryUser = async(req, res) => {
 console.log("atendido por getEveryUser");
   try {
