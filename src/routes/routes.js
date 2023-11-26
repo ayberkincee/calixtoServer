@@ -35,6 +35,7 @@ const InitLoad = require("../controllers/initLoad");
 const updateClient = require("../controllers/updateClient");
 const postStats = require("../controllers/postStats");
 const getStats = require("../controllers/getStats");
+const getAllIcons = require("../controllers/getAllIcons");
 
 const router = Router();
 
@@ -78,6 +79,7 @@ router.patch("/updateProducts", updateProducts);
 //-------------------------OTHER------------------------------
 router.post("/postStats", postStats);
 router.post("/getStats", getStats);
+router.get("/getAllIcons", getAllIcons);
 
 //-------------------------PROVISIONAL------------------------
 router.get("/test", test);
