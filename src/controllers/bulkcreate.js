@@ -19,14 +19,14 @@ async function bulkcreate(req, res) {
     for (let i = 0; i < prd.length; i++) {
       const nn = prd[i].nombre;
       
-      // console.log("checking if the product exist");
+      // console.log(`Checking if the product ${prd[i].id} exist`);
       
       const prodExist = await Product.findOne({
         where: { id: prd[i].id },
       });
       
-      // console.log(`existe? ${nn}`, !!prodExist);
-      
+      // console.log(`existe ${prd[i]}?`, !!prodExist);
+      // console.log(`tax`, prd[i]);
       if (!prodExist) {
 
         //-----------TAX-------------
@@ -130,6 +130,7 @@ async function bulkcreate(req, res) {
     }
     res.status(200).send("carga completa");
   } catch (error) {
+    // console.log(error.message);
     res.status(500).json({ error: error.message });
   }
 }

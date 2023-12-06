@@ -38,7 +38,7 @@ async function updateProducts(req, res) {
         }
 
         //recorta el texto de la descripcion si es muy extenso:
-        p.descripcion ? (p.descripcion = p.descripcion.slice(0, 450)) : null;
+        p.descripcion && (p.descripcion = p.descripcion.slice(0, 450));
 
         //Updates el producto:
         const r = await Product.update(p, { where: { id: p.id } });
