@@ -29,9 +29,9 @@ const productmodel = (sequelize) => {
         type: DataTypes.DECIMAL,
         allowNull: false,
       },
-      tax:{
+      tax: {
         type: DataTypes.DECIMAL,
-        defaultValue: 0
+        defaultValue: 0,
       },
       prodUrl: {
         type: DataTypes.STRING,
