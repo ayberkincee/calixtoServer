@@ -2,7 +2,6 @@
 const {
   Product,
   Provider,
-  Tax,
   Category,
   Owner,
   State,
@@ -19,7 +18,7 @@ const { dataDb } = require("../assets/dataDb.js");
 async function InitLoad(req, res) {
   // console.log("served by InitLoad");
   try {
-    await Tax.bulkCreate(dataDb.tax);
+    // await Tax.bulkCreate(dataDb.tax);
     await State.bulkCreate(dataDb.state);
     await Icon.bulkCreate(dataDb.icon);
     await Channel.bulkCreate(dataDb.canales);
@@ -29,7 +28,11 @@ async function InitLoad(req, res) {
     const port2 = await Portfolio.findOne({ where: { id: 2 } });
     await User.bulkCreate(dataDb.user);
 
-    let usr = await User.findOne({ where: { id: 1 } });
+    let usr = await User.findOne({ where: { id: 0 } });
+    usr.setOwner(dataDb.owner[2].id);
+    usr.addPortfolio(port1.id);
+
+    usr = await User.findOne({ where: { id: 1 } });
     usr.setOwner(dataDb.owner[1].id);
     usr.addPortfolio(port1.id);
 

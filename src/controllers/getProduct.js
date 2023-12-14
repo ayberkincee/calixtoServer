@@ -1,16 +1,16 @@
-const { Product, Tax } = require("../db");
+const { Product } = require("../db");
 
 async function getProduct(req, res) {
   const { productCodigo } = req.params;
   let prod = await Product.findAll({
     where:{id:productCodigo},
-    include: 
-      {
-        model: Tax,
-        attributes: [
-          "tax"
-        ]
-      }
+    // include: 
+    //   {
+    //     model: Tax,
+    //     attributes: [
+    //       "tax"
+    //     ]
+    //   }
     
   })
  

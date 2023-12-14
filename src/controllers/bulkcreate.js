@@ -1,7 +1,7 @@
 //Solo crea los productos que no existen previamente en la bd
 
 //imports the models
-const { Product, Provider, Tax, Category, State, Channel } = require("../db.js");
+const { Product, Provider, Category, State, Channel } = require("../db.js");
 
 // const statemodel = require("../models/state.js");
 
@@ -31,9 +31,9 @@ async function bulkcreate(req, res) {
 
         //-----------TAX-------------
         // console.log("creando tax");
-        const tax = await Tax.findOne({
-          where: { tax: prd[i].tax },
-        });
+        // const tax = await Tax.findOne({
+        //   where: { tax: prd[i].tax },
+        // });
 
         //-----------PROVIDER------------
         // console.log("creando provider");
@@ -79,6 +79,7 @@ async function bulkcreate(req, res) {
           rotacion: prd[i].rotacion,
           agotado: prd[i].agotado,
           limitado: prd[i].limitado,
+          tax: prd[i].tax
         });
         // console.log(`producto creado ${prd[i].nombre}`);
 
@@ -94,10 +95,9 @@ async function bulkcreate(req, res) {
         //--------------RELACIONES----------------
         // console.log("creando relacion estados");
         const stateId = await State.findOne({ where: { name: estado } });
-        // console.log("creando relacion taxes");
         await product.setState(stateId);
         // console.log("creando relacion taxes");
-        await product.setTax(tax);
+        // await product.setTax(tax);
         // console.log("creando relacion proveedores");
         await product.setProvider(provider);
         // console.log("creando relacion categorias");
@@ -130,7 +130,7 @@ async function bulkcreate(req, res) {
     }
     res.status(200).send("carga completa");
   } catch (error) {
-    // console.log(error.message);
+    console.log("bulkcreate error: ",error.message);
     res.status(500).json({ error: error.message });
   }
 }

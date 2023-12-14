@@ -54,7 +54,6 @@ sequelize.models = Object.fromEntries(capsEntries);
 const {
   Product,
   Provider,
-  Tax,
   Category,
   Icon,
   Owner,
@@ -87,9 +86,6 @@ Provider.hasMany(Product);
 
 Product.belongsTo(Category);
 Category.hasMany(Product);
-
-Product.belongsTo(Tax);
-Tax.hasMany(Product);
 
 Product.belongsTo(State);
 State.hasMany(Product);
