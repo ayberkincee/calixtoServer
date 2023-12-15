@@ -6,7 +6,6 @@ const {
   User,
   Icon,
   Category,
-  Tax,
   State,
   Channel,
 } = require("../db.js");
@@ -70,10 +69,10 @@ const getProdsUser = async (req, res) => {
           model: Category,
           attributes: ["id", "name"],
         },
-        {
-          model: Tax,
-          attributes: ["tax"],
-        },
+        // {
+        //   model: Tax,
+        //   attributes: ["tax"],
+        // },
         {
           model: State,
           attributes: ["id"],

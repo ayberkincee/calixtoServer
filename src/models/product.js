@@ -5,7 +5,7 @@ const productmodel = (sequelize) => {
     "product",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.STRING,
         primaryKey: true,
         autoIncrement: false,
       },
@@ -28,6 +28,10 @@ const productmodel = (sequelize) => {
       precioBase: {
         type: DataTypes.DECIMAL,
         allowNull: false,
+      },
+      tax: {
+        type: DataTypes.DECIMAL,
+        defaultValue: 0,
       },
       prodUrl: {
         type: DataTypes.STRING,

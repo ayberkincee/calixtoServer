@@ -19,6 +19,10 @@ const statsmodel = (sequelize) => {
       type: DataTypes.STRING,
       allowNull: true,
     },
+    detailName: {
+      type: DataTypes.STRING,
+      allowNull: true,
+    },
   });
 };
 module.exports = statsmodel;

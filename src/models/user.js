@@ -1,5 +1,7 @@
 const { DataTypes } = require("sequelize");
 
+// Profiles: 1:Vendedor, 2:Embajador, 3:Cliente
+
 const usermodel = (sequelize) => {
   sequelize.define(
     "user",
@@ -16,6 +18,14 @@ const usermodel = (sequelize) => {
       password: {
         type: DataTypes.STRING,
         allowNull: false,
+      },
+      profile: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
+      },
+      priceList: {
+        type: DataTypes.INTEGER,
+        defaultValue: 1,
       },
       isActive: {
         type: DataTypes.BOOLEAN,

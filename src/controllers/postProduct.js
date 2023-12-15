@@ -1,6 +1,5 @@
 const {
   Product,
-  Tax,
   State,
   Provider,
   Owner,
@@ -11,7 +10,7 @@ const {
 const postProduct = async (req, res) => {
   try {
     let prod = req.body;
-    const taxId = prod.taxId;
+    // const taxId = prod.taxId;
     const stateId = prod.stateId;
     const categoryId = prod.categoryId;
     const ownerId = prod.ownerId;
@@ -31,7 +30,7 @@ const postProduct = async (req, res) => {
 
     const newProd = await Product.create(prod);
 
-    await newProd.setTax(taxId); //OneToMany
+    // await newProd.setTax(taxId); //OneToMany
     await newProd.setState(stateId); //OneToMany
     await newProd.setOwner(ownerId); //OneToMany
     await newProd.setCategory(categoryId); //OneToMany

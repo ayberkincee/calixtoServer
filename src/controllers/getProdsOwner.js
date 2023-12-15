@@ -1,5 +1,5 @@
 //returns an array of product objects
-const { Product, Provider, Tax, Category, Owner, State, Icon } = require("../db.js");
+const { Product, Provider, Category, Owner, State, Icon } = require("../db.js");
 
 const getProdsOwner = async (req, res) => {
   try{
@@ -15,10 +15,10 @@ const getProdsOwner = async (req, res) => {
         model: Owner,
         attributes: ["name"],
       },
-      {
-        model: Tax,
-        attributes: ["tax"],
-      },
+      // {
+      //   model: Tax,
+      //   attributes: ["tax"],
+      // },
       {
         model: Category,
         attributes: ["name"],
