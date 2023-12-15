@@ -13,6 +13,7 @@ const getClient = require("../controllers/getClient");
 const getAllClientsUser = require("../controllers/getAllClientsUser");
 const updateUser = require("../controllers/updateUser");
 const postUser = require("../controllers/postUser");
+const updateSlogan = require('../controllers/updateSlogan');
 
 //Product routes
 const getProdsOwner = require("../controllers/getProdsOwner");
@@ -58,6 +59,7 @@ router.patch("/updateOwner", updateOwner);
 router.patch("/updateClient", updateClient);
 router.patch("/updateUser", updateUser);
 router.post("/createUser", postUser);
+router.patch('/updateslogan', updateSlogan)
 
 //---------------------PRODUCT ROUTES---------------------
 router.get("/prodsowner/:owner", getProdsOwner);
