@@ -11,6 +11,8 @@ async function postUser(req, res) {
       name: nw.nombre,
       password: nw.psw,
       isActive: true,
+      priceList: nw.precio,
+      profile: nw.perfil,
     };
     const myNewUser = await User.create(newUser);
     myNewUser.setOwner(ownerId);

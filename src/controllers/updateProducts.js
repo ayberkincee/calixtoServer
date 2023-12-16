@@ -15,6 +15,8 @@ async function updateProducts(req, res) {
 
       //si el producto existe, lo actualiza:
       if (prodExist) {
+
+        //-----------Category-----------------
         //creates or updates the category in categories table
         const categoryId = Number(p.category?.slice(0, 4));
         const category = p.category?.slice(7);
@@ -37,12 +39,15 @@ async function updateProducts(req, res) {
           }
         }
 
+        //---------------Description------------------
         //recorta el texto de la descripcion si es muy extenso:
         p.descripcion && (p.descripcion = p.descripcion.slice(0, 450));
 
+        //----------------Product----------------
         //Updates el producto:
         const r = await Product.update(p, { where: { id: p.id } });
         
+        //-----------------Channels-----------------
         let newChannels = [];
         //only if new channels were provided for this product.
         p.saludable.toLowerCase() === "si" && newChannels.push(1);
@@ -56,6 +61,7 @@ async function updateProducts(req, res) {
         //adiciona los canales al producto:
         newChannels.length > 0 && prodExist.setChannels(newChannels);
 
+        //----------------Icons------------------------
         //crea el arreglo de iconos del producto:
         let newIcons = [];
         p.keto.toLowerCase() === "si" && newIcons.push(1);

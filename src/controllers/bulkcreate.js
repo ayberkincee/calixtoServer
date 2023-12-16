@@ -29,12 +29,6 @@ async function bulkcreate(req, res) {
       // console.log(`tax`, prd[i]);
       if (!prodExist) {
 
-        //-----------TAX-------------
-        // console.log("creando tax");
-        // const tax = await Tax.findOne({
-        //   where: { tax: prd[i].tax },
-        // });
-
         //-----------PROVIDER------------
         // console.log("creando provider");
         await Provider.findOrCreate({
@@ -73,6 +67,15 @@ async function bulkcreate(req, res) {
           codigoBarras: prd[i].codigoBarras,
           embalaje: prd[i].embalaje,
           precioBase: prd[i].precioBase,
+          precio2: prd[i].precio2,
+          precio3: prd[i].precio3,
+          precio4: prd[i].precio4,
+          precio5: prd[i].precio5,
+          precio6: prd[i].precio6,
+          precio7: prd[i].precio7,
+          precio8: prd[i].precio8,
+          precio9: prd[i].precio9,
+          precio10: prd[i].precio10,
           prodUrl: prd[i].prodUrl,
           descripcion: prd[i].descripcion.slice(0, 450),
           existencia: prd[i].existencia,
