@@ -21,10 +21,11 @@ const getProdsUser = async (req, res) => {
       include: [
         {
           model: Portfolio, //includes the portfolio related
-          through: { attributes: [] }, //no info from intermediate table is inclueded
+          through: { attributes: [] }, //no info from intermediate table is included
         },
       ],
     });
+
     usrPort = usrPort.portfolios.map((p) => p.id);
     //array of portfaolio ids for the user
 
@@ -69,18 +70,12 @@ const getProdsUser = async (req, res) => {
           model: Category,
           attributes: ["id", "name"],
         },
-        // {
-        //   model: Tax,
-        //   attributes: ["tax"],
-        // },
         {
           model: State,
           attributes: ["id"],
         },
-        
       ],
     });
-    // console.log(prodUser[0].category);
     let prove = prodUser.map((p) => p.provider?.name);
     let categ = prodUser.map((p) => p.category?.name);
     // console.log("categs from getProdUser", new Set(categ));

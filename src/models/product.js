@@ -25,10 +25,6 @@ const productmodel = (sequelize) => {
         type: DataTypes.STRING,
         allowNull: false,
       },
-      precioBase: {
-        type: DataTypes.DECIMAL,
-        allowNull: false,
-      },
       tax: {
         type: DataTypes.DECIMAL,
         defaultValue: 0,
@@ -56,6 +52,46 @@ const productmodel = (sequelize) => {
       limitado: {
         type: DataTypes.INTEGER,
         defaultValue: 15,
+      },
+      precioBase: {
+        type: DataTypes.DECIMAL,
+        allowNull: false,
+      },
+      precio2: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio3: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio4: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio5: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio6: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio7: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio8: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio9: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
+      },
+      precio10: {
+        type: DataTypes.DECIMAL,
+        allowNull: true,
       },
     },
     { timestamps: false }
