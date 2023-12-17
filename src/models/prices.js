@@ -47,6 +47,8 @@ const pricemodel = (sequelize) => {
       type: DataTypes.DECIMAL,
       allowNull: true,
     },
-  });
+  },
+  { timestamps: false }
+  );
 };
 module.exports = pricemodel;
