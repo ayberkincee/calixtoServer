@@ -15,7 +15,9 @@ async function updateProducts(req, res) {
 
       //si el producto existe, lo actualiza:
       if (prodExist) {
-
+        console.log('====================================');
+        console.log(`prod ${p.id} existe`);
+        console.log('====================================');
         //-----------Category-----------------
         //creates or updates the category in categories table
         const categoryId = Number(p.category?.slice(0, 4));
@@ -50,13 +52,13 @@ async function updateProducts(req, res) {
         //-----------------Channels-----------------
         let newChannels = [];
         //only if new channels were provided for this product.
-        p.saludable.toLowerCase() === "si" && newChannels.push(1);
-        p.autoservicio.toLowerCase() === "si" && newChannels.push(2);
-        p.gym.toLowerCase() === "si" && newChannels.push(3);
-        p.cafesCow.toLowerCase() === "si" && newChannels.push(4);
-        p.horeca.toLowerCase() === "si" && newChannels.push(5);
-        p.licoStores.toLowerCase() === "si" && newChannels.push(6);
-        p.educacion.toLowerCase() === "si" && newChannels.push(7);
+        p.saludable?.toLowerCase() === "si" && newChannels.push(1);
+        p.autoservicio?.toLowerCase() === "si" && newChannels.push(2);
+        p.gym?.toLowerCase() === "si" && newChannels.push(3);
+        p.cafesCow?.toLowerCase() === "si" && newChannels.push(4);
+        p.horeca?.toLowerCase() === "si" && newChannels.push(5);
+        p.licoStores?.toLowerCase() === "si" && newChannels.push(6);
+        p.educacion?.toLowerCase() === "si" && newChannels.push(7);
 
         //adiciona los canales al producto:
         newChannels.length > 0 && prodExist.setChannels(newChannels);
@@ -64,18 +66,18 @@ async function updateProducts(req, res) {
         //----------------Icons------------------------
         //crea el arreglo de iconos del producto:
         let newIcons = [];
-        p.keto.toLowerCase() === "si" && newIcons.push(1);
-        p.keto.toLowerCase() === "no" && newIcons.push(7);
-        p.vegano.toLowerCase() === "si" && newIcons.push(2);
-        p.vegano.toLowerCase() === "no" && newIcons.push(8);
-        p.vegetariano.toLowerCase() === "si" && newIcons.push(3);
-        p.vegetariano.toLowerCase() === "no" && newIcons.push(9);
-        p.diabetico.toLowerCase() === "si" && newIcons.push(4);
-        p.diabetico.toLowerCase() === "no" && newIcons.push(10);
-        p.proteina.toLowerCase() === "si" && newIcons.push(5);
-        p.proteina.toLowerCase() === "no" && newIcons.push(11);
-        p.gluten.toLowerCase() === "si" && newIcons.push(6);
-        p.gluten.toLowerCase() === "no" && newIcons.push(12);
+        p.keto?.toLowerCase() === "si" && newIcons.push(1);
+        p.keto?.toLowerCase() === "no" && newIcons.push(7);
+        p.vegano?.toLowerCase() === "si" && newIcons.push(2);
+        p.vegano?.toLowerCase() === "no" && newIcons.push(8);
+        p.vegetariano?.toLowerCase() === "si" && newIcons.push(3);
+        p.vegetariano?.toLowerCase() === "no" && newIcons.push(9);
+        p.diabetico?.toLowerCase() === "si" && newIcons.push(4);
+        p.diabetico?.toLowerCase() === "no" && newIcons.push(10);
+        p.proteina?.toLowerCase() === "si" && newIcons.push(5);
+        p.proteina?.toLowerCase() === "no" && newIcons.push(11);
+        p.gluten?.toLowerCase() === "si" && newIcons.push(6);
+        p.gluten?.toLowerCase() === "no" && newIcons.push(12);
 
         //adiciona los iconos al producto:
         newIcons.length>0 && prodExist.setIcons(newIcons);
