@@ -47,14 +47,13 @@ async function updateProducts(req, res) {
         const r = await Product.update(p, { where: { id: p.id } });
 
         //-----------------Channels-----------------
-
         //Elimina o adiciona cualquier canal individual a los canales que ya tenga el 
         //producto.  No modifica los que no se le pasen.
-        
+
         let newChannels = prodExist.channels.map((c) => c.id);
-        console.log("====================================");
-        console.log("init chnns", newChannels);
-        console.log("====================================");
+        // console.log("====================================");
+        // console.log("init chnns", newChannels);
+        // console.log("====================================");
         // let newChannels = [];
         //only if new channels were provided for this product.
         p.saludable?.toLowerCase() === "si" && newChannels.push(1);
@@ -89,9 +88,9 @@ async function updateProducts(req, res) {
         //adiciona los canales al producto:
         prodExist.setChannels([...new Set(newChannels)]);
 
-        console.log("====================================");
-        console.log("final chnns", [...new Set(newChannels)]);
-        console.log("====================================");
+        // console.log("====================================");
+        // console.log("final chnns", [...new Set(newChannels)]);
+        // console.log("====================================");
 
         //----------------Icons------------------------
         //crea el arreglo de iconos del producto:
