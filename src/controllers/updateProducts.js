@@ -56,37 +56,58 @@ async function updateProducts(req, res) {
         // console.log("====================================");
         // let newChannels = [];
         //only if new channels were provided for this product.
-        p.saludable?.toLowerCase() === "si" && newChannels.push(1);
+        p.saludable?.toLowerCase() === "si" && 
+        newChannels.indexOf(1) === -1 &&
+        newChannels.push(1);
         p.saludable?.toLowerCase() === "no" &&
           newChannels.indexOf(1) > -1 &&
           newChannels.splice(newChannels.indexOf(1), 1);
-        p.autoservicio?.toLowerCase() === "si" && newChannels.push(2);
+
+        p.autoservicio?.toLowerCase() === "si" && 
+        newChannels.indexOf(2) === -1 &&
+        newChannels.push(2);
         p.autoservicio?.toLowerCase() === "no" &&
           newChannels.indexOf(2) > -1 &&
           newChannels.splice(newChannels.indexOf(2), 1);
-        p.gym?.toLowerCase() === "si" && newChannels.push(3);
+
+        p.gym?.toLowerCase() === "si" && 
+        newChannels.indexOf(3) === -1 &&
+        newChannels.push(3);
         p.gym?.toLowerCase() === "no" &&
           newChannels.indexOf(3) > -1 &&
           newChannels.splice(newChannels.indexOf(3), 1);
-        p.cafesCow?.toLowerCase() === "si" && newChannels.push(4);
+
+        p.cafesCow?.toLowerCase() === "si" && 
+        newChannels.indexOf(4) === -1 &&
+        ewChannels.push(4);
         p.cafesCow?.toLowerCase() === "no" &&
           newChannels.indexOf(4) > -1 &&
           newChannels.splice(newChannels.indexOf(4), 1);
-        p.horeca?.toLowerCase() === "si" && newChannels.push(5);
+
+        p.horeca?.toLowerCase() === "si" && 
+        newChannels.indexOf(5) === -1 &&
+        newChannels.push(5);
         p.horeca?.toLowerCase() === "no" &&
           newChannels.indexOf(5) > -1 &&
           newChannels.splice(newChannels.indexOf(5), 1);
-        p.licoStores?.toLowerCase() === "si" && newChannels.push(6);
+
+        p.licoStores?.toLowerCase() === "si" && 
+        newChannels.indexOf(6) === -1 &&
+        newChannels.push(6);
         p.licoStores?.toLowerCase() === "no" &&
           newChannels.indexOf(6) > -1 &&
           newChannels.splice(newChannels.indexOf(6), 1);
-        p.educacion?.toLowerCase() === "si" && newChannels.push(7);
+
+        p.educacion?.toLowerCase() === "si" && 
+        newChannels.indexOf(7) === -1 &&
+        newChannels.push(7);
         p.educacion?.toLowerCase() === "no" &&
           newChannels.indexOf(7) > -1 &&
           newChannels.splice(newChannels.indexOf(7), 1);
 
         //adiciona los canales al producto:
-        prodExist.setChannels([...new Set(newChannels)]);
+        // prodExist.setChannels([...new Set(newChannels)]);
+        prodExist.setChannels(newChannels);
 
         // console.log("====================================");
         // console.log("final chnns", [...new Set(newChannels)]);
