@@ -25,12 +25,11 @@ async function bulkcreate(req, res) {
         where: { id: prd[i].id },
       });
       
-      // console.log(`existe ${prd[i]}?`, !!prodExist);
-      // console.log(`tax`, prd[i]);
+      // console.log(`existe ${prd[i].id}?`, !!prodExist);
       if (!prodExist) {
 
         //-----------PROVIDER------------
-        // console.log("creando provider");
+        // console.log("provider33", prd[i].id );
         await Provider.findOrCreate({
           where: { name: prd[i].provider },
         });
@@ -42,7 +41,7 @@ async function bulkcreate(req, res) {
         // console.log("creando categoria");
         const categoryId = Number(prd[i].category.slice(0, 4));
         const category = prd[i].category.slice(7);
-
+        // console.log("categ45", prd[i].id );
         await Category.findOrCreate({
           where: { id: categoryId },
           defaults: {
@@ -66,16 +65,16 @@ async function bulkcreate(req, res) {
           nombre: prd[i].nombre,
           codigoBarras: prd[i].codigoBarras,
           embalaje: prd[i].embalaje,
-          precioBase: prd[i].precioBase,
-          precio2: prd[i].precio2,
-          precio3: prd[i].precio3,
-          precio4: prd[i].precio4,
-          precio5: prd[i].precio5,
-          precio6: prd[i].precio6,
-          precio7: prd[i].precio7,
-          precio8: prd[i].precio8,
-          precio9: prd[i].precio9,
-          precio10: prd[i].precio10,
+          precioBase: Number(prd[i].precioBase),
+          precio2: Number(prd[i].precio2),
+          precio3: Number(prd[i].precio3),
+          precio4: Number(prd[i].precio4),
+          precio5: Number(prd[i].precio5),
+          precio6: Number(prd[i].precio6),
+          precio7: Number(prd[i].precio7),
+          precio8: Number(prd[i].precio8),
+          precio9: Number(prd[i].precio9),
+          precio10: Number(prd[i].precio10),
           prodUrl: prd[i].prodUrl,
           descripcion: prd[i].descripcion.slice(0, 450),
           existencia: prd[i].existencia,
@@ -97,6 +96,7 @@ async function bulkcreate(req, res) {
 
         //--------------RELACIONES----------------
         // console.log("creando relacion estados");
+        // console.log("estado100", prd[i].id );
         const stateId = await State.findOne({ where: { name: estado } });
         await product.setState(stateId);
         // console.log("creando relacion taxes");

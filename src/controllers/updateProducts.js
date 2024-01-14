@@ -42,6 +42,18 @@ async function updateProducts(req, res) {
         //recorta el texto de la descripcion si es muy extenso:
         p.descripcion && (p.descripcion = p.descripcion.slice(0, 450));
 
+        //----------------Prices--------------------
+        p.precioBase = Number(p.precioBase);
+        p.precio2 = Number(p.precio2);
+        p.precio3 = Number(p.precio3);
+        p.precio4 = Number(p.precio4);
+        p.precio5 = Number(p.precio5);
+        p.precio6 = Number(p.precio6);
+        p.precio7 = Number(p.precio7);
+        p.precio8 = Number(p.precio8);
+        p.precio9 = Number(p.precio9);
+        p.precio10 = Number(p.precio10);
+
         //----------------Product----------------
         //Updates el producto:
         const r = await Product.update(p, { where: { id: p.id } });
@@ -79,7 +91,7 @@ async function updateProducts(req, res) {
 
         p.cafesCow?.toLowerCase() === "si" && 
         newChannels.indexOf(4) === -1 &&
-        ewChannels.push(4);
+        newChannels.push(4);
         p.cafesCow?.toLowerCase() === "no" &&
           newChannels.indexOf(4) > -1 &&
           newChannels.splice(newChannels.indexOf(4), 1);
