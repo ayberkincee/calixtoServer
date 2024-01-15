@@ -55,6 +55,12 @@ async function updateProducts(req, res) {
         p.precio10 = Number(p.precio10);
 
         //----------------Product----------------
+        //Format the isActive info
+        if (p.isActive.toLowerCase() === 'si') {
+          p.isActive = true
+        }else{
+          p.isActive = false
+        }
         //Updates el producto:
         const r = await Product.update(p, { where: { id: p.id } });
 
