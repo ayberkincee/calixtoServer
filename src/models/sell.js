@@ -9,7 +9,7 @@ const sellsmodel = (sequelize) => {
             
         },
         productCodigo: {
-            type: DataTypes.INTEGER,
+            type: DataTypes.STRING,
             autoIncrement: false,
             allowNull: false
         },

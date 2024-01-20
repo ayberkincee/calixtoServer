@@ -7,7 +7,7 @@ async function recordSell(req, res) {
   for (let key in sells) {
     sellsToDb.push(
         {
-            productCodigo: Number(key),
+            productCodigo: key,
             clientId: Number(req.body.clienteBuscado.id),
             userId:  Number(req.body.userId),
             quantity: Number(sells[key]),
