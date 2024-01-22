@@ -56,7 +56,7 @@ async function updateProducts(req, res) {
 
         //----------------Product----------------
         //Format the isActive info
-        if (p.isActive.toLowerCase() === 'si') {
+        if (p.isActive?.toLowerCase() === 'si') {
           p.isActive = true
         }else{
           p.isActive = false
