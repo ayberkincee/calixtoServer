@@ -9,7 +9,7 @@ const { DB_USER, DB_PASSWORD, DB_HOST,
 DB_DEPLOY_LOCAL, DB_PORT_LOCAL,
 //DB_DEPLOY_SFGROUP, DB_PORT_SFGROUP,
 //DB_DEPLOY_GBARCO, DB_PORT_GBARCO
-} = process.env;
+} = process.env; 
 
 //===================SELECT FOR OWNER=============
 const DB_DEPLOY = DB_DEPLOY_LOCAL;
