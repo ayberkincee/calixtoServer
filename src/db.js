@@ -6,21 +6,8 @@ const fs = require("fs");
 const path = require("path");
 
 const { DB_USER, DB_PASSWORD, DB_HOST, 
-DB_DEPLOY_LOCAL, DB_PORT_LOCAL,
-//DB_DEPLOY_SFGROUP, DB_PORT_SFGROUP,
-//DB_DEPLOY_GBARCO, DB_PORT_GBARCO
+DB_DEPLOY, DB_PORT,
 } = process.env; 
-
-//===================SELECT FOR OWNER=============
-const DB_DEPLOY = DB_DEPLOY_LOCAL;
-const DB_PORT = DB_PORT_LOCAL;
-
-// const DB_PORT = DB_PORT_SFGROUP;
-// const DB_PORT = DB_PORT_SFGROUP;
-
-// const DB_PORT = DB_PORT_GBARCO;
-// const DB_PORT = DB_PORT_GBARCO;
-//===============================================
 
 console.log(`connecting to database...`);
 
