@@ -5,7 +5,7 @@ const portfoliomodel = (sequelize) => {
     "portfolio",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DOUBLE,
         primaryKey: true,
         autoIncrement: false,
       },

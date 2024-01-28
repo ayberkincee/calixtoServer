@@ -49,7 +49,6 @@ const ownermodel = (sequelize) => {
         type: DataTypes.STRING,
         defaultValue: "27457D"
       },
-
     },
     { timestamps: false }
   );

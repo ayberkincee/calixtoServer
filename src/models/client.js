@@ -5,7 +5,7 @@ const clientmodel = (sequelize) => {
     "client",
     {
       id: {
-        type: DataTypes.INTEGER,
+        type: DataTypes.DOUBLE,
         primaryKey: true,
         autoIncrement: false,
       },
