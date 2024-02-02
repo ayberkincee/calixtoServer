@@ -6,6 +6,7 @@ async function postUser(req, res) {
   try {
     const nw = req.body;
     const ownerId = nw.ownerId;
+    const portfolioId =nw.portfolioId
     const newUser = {
       id: nw.id,
       name: nw.nombre,
@@ -16,7 +17,7 @@ async function postUser(req, res) {
     };
     const myNewUser = await User.create(newUser);
     myNewUser.setOwner(ownerId);
-    myNewUser.addPortfolio(1);
+    myNewUser.addPortfolio(portfolioId);
     res.status(200).json(myNewUser);
   } catch (error) {
     console.log(error);
