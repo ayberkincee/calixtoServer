@@ -29,6 +29,7 @@ const recordSell = require("../controllers/recordSell");
 const getOpenSells = require("../controllers/getOpenSells");
 const closeSells = require("../controllers/closeSells");
 const getProduct = require("../controllers/getProduct");
+const createPort = require("../controllers/createPort")
 
 //other
 const test = require("../controllers/test");
@@ -77,6 +78,7 @@ router.get("/openSells/:userId", getOpenSells);
 //trae de bd las open sells
 router.post("/closeSells", closeSells);
 router.patch("/updateProducts", updateProducts);
+router.post("/createPort", createPort);
 
 //-------------------------OTHER------------------------------
 router.post("/postStats", postStats);

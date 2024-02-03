@@ -57,13 +57,21 @@ async function updateProducts(req, res) {
         //----------------Product----------------
         //Format the isActive info
         //if no column is present, or the value is emply, no changes are made to isActive in that product.
-        if (p.isActive === "") {
-          delete p.isActive;
-        } else if (p.isActive?.toLowerCase() === "si") {
+        if (p.isActive?.toLowerCase() === "si") {
           p.isActive = true;
-        } else {
+        } else if (p.isActive?.toLowerCase() === "no") {
           p.isActive = false;
+        } else {
+          delete p.isActive;
         }
+       
+        // if (p.isActive === "") {
+        //   delete p.isActive;
+        // } else if (p.isActive?.toLowerCase() === "si") {
+        //   p.isActive = true;
+        // } else {
+        //   p.isActive = false;
+        // }
 
         //Updates el producto:
         const r = await Product.update(p, { where: { id: p.id } });
