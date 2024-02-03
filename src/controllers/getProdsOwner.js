@@ -43,6 +43,7 @@ const getProdsOwner = async (req, res) => {
       },
     ],
   });
+
   res.status(200).json(allProducts);
 }
 catch (error) {
