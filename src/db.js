@@ -5,9 +5,8 @@ const { Sequelize } = require("sequelize");
 const fs = require("fs");
 const path = require("path");
 
-const { DB_USER, DB_PASSWORD, DB_HOST, 
-DB_DEPLOY, DB_PORT,
-} = process.env; 
+const { DB_DEPLOY } = process.env;
+// const { DB_USER, DB_PASSWORD, DB_HOST, DB_DEPLOY, DB_PORT,} = process.env;
 
 console.log(`connecting to database...`);
 
@@ -25,7 +24,7 @@ const basename = path.basename(__filename);
 
 const modelDefiners = [];
 
-console.log('defining models...');
+console.log("defining models...");
 
 // Leemos todos los archivos de la carpeta Models, los requerimos y agregamos al arreglo modelDefiners
 fs.readdirSync(path.join(__dirname, "/models"))
@@ -40,7 +39,7 @@ fs.readdirSync(path.join(__dirname, "/models"))
 // console.log("modelDefiners");
 // console.log(modelDefiners);
 
-// Injectamos la conexion (sequelize) a todos los modelos: 
+// Injectamos la conexion (sequelize) a todos los modelos:
 //crea la instancia de cada modelo y lo incluye en sequelize.models
 modelDefiners.forEach((model) => model(sequelize));
 // Capitalizamos los nombres de los modelos ie: product => Product
@@ -66,14 +65,14 @@ const {
   Channel,
 } = sequelize.models;
 
-console.log('creating relations...');
+console.log("creating relations...");
 
 //Many to many:
 Product.belongsToMany(Icon, { through: "ProdIcon" });
 Icon.belongsToMany(Product, { through: "ProdIcon" });
 
-Product.belongsToMany(Channel, {through: "ProdChannel"});
-Channel.belongsToMany(Product, {through: "ProdChannel"});
+Product.belongsToMany(Channel, { through: "ProdChannel" });
+Channel.belongsToMany(Product, { through: "ProdChannel" });
 
 Product.belongsToMany(Portfolio, { through: "ProdPort" });
 Portfolio.belongsToMany(Product, { through: "ProdPort" });
